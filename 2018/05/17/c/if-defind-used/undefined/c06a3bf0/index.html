@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="写在前面 &amp;#160; &amp;#160; &amp;#160;&amp;#160;由于之前没玩过steam的游戏,刚好那天steam客户端被劫持,不小心买到了租号公司的游戏,给的邮箱是他们公司的邮箱,后来邮箱就登不上了。 　　 查邮箱服务器的IP地址 &amp;#160; &amp;#160; &amp;#160;&amp;#160;47.75.X.XXX,阿里云主机 端口扫描 123nmap -p 3389 47.75.X.XXXnmap -p">
+<meta name="description" content="注意点#if defined 相较于 #ifdef后面确实是可以接多个宏，但是1#if defined A || B 的写法是错误的，正确的写法应该是1#if defined A || defined B">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mx.zugehao.com不能登录的,看这里！！！">
-<meta property="og:url" content="http://yoursite.com/2018/07/27/practice/3389/index.html">
+<meta property="og:title" content="关于#if defined">
+<meta property="og:url" content="http://yoursite.com/2018/05/17/c/if-defind-used/undefined/c06a3bf0/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="写在前面 &amp;#160; &amp;#160; &amp;#160;&amp;#160;由于之前没玩过steam的游戏,刚好那天steam客户端被劫持,不小心买到了租号公司的游戏,给的邮箱是他们公司的邮箱,后来邮箱就登不上了。 　　 查邮箱服务器的IP地址 &amp;#160; &amp;#160; &amp;#160;&amp;#160;47.75.X.XXX,阿里云主机 端口扫描 123nmap -p 3389 47.75.X.XXXnmap -p">
+<meta property="og:description" content="注意点#if defined 相较于 #ifdef后面确实是可以接多个宏，但是1#if defined A || B 的写法是错误的，正确的写法应该是1#if defined A || defined B">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-27T06:45:07.645Z">
+<meta property="og:updated_time" content="2018-07-27T15:11:31.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mx.zugehao.com不能登录的,看这里！！！">
-<meta name="twitter:description" content="写在前面 &amp;#160; &amp;#160; &amp;#160;&amp;#160;由于之前没玩过steam的游戏,刚好那天steam客户端被劫持,不小心买到了租号公司的游戏,给的邮箱是他们公司的邮箱,后来邮箱就登不上了。 　　 查邮箱服务器的IP地址 &amp;#160; &amp;#160; &amp;#160;&amp;#160;47.75.X.XXX,阿里云主机 端口扫描 123nmap -p 3389 47.75.X.XXXnmap -p">
+<meta name="twitter:title" content="关于#if defined">
+<meta name="twitter:description" content="注意点#if defined 相较于 #ifdef后面确实是可以接多个宏，但是1#if defined A || B 的写法是错误的，正确的写法应该是1#if defined A || defined B">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/27/practice/3389/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/17/c/if-defind-used/undefined/c06a3bf0/"/>
 
 
 
 
 
-  <title>mx.zugehao.com不能登录的,看这里！！！ | 杜焰</title>
+  <title>关于#if defined | 杜焰</title>
   
 
 
@@ -162,7 +162,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">duyan</p>
+        <h1 class="site-subtitle" itemprop="description">duyan</h1>
       
   </div>
 
@@ -244,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/practice/3389/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/c/if-defind-used/undefined/c06a3bf0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜焰">
@@ -261,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mx.zugehao.com不能登录的,看这里！！！</h1>
+          <h2 class="post-title" itemprop="name headline">关于#if defined</h2>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T11:23:58+08:00">
-                2018-07-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T11:16:31+08:00">
+                2018-05-17
               </time>
             
 
@@ -285,7 +285,7 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>312 字</span>
+              <span>48 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
               </span>
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/practice/" itemprop="url" rel="index">
-                    <span itemprop="name">practice</span>
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
                   </a>
                 </span>
 
@@ -342,26 +342,8 @@
       
 
       
-        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><hr>
-<p>&#160; &#160; &#160;&#160;由于之前没玩过steam的游戏,刚好那天steam客户端被劫持,不小心买到了租号公司的游戏,给的邮箱是他们公司的邮箱,后来邮箱就登不上了。
-　　</p>
-<h3 id="查邮箱服务器的IP地址"><a href="#查邮箱服务器的IP地址" class="headerlink" title="查邮箱服务器的IP地址"></a>查邮箱服务器的IP地址</h3><hr>
-<p>&#160; &#160; &#160;&#160;47.75.X.XXX,阿里云主机</p>
-<h3 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h3><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmap -p 3389 47.75.X.XXX</span><br><span class="line">nmap -p 1-65535 -T4 -A -v 47.75.X.XXX</span><br><span class="line">hydra -L username.txt -P password.txt -s port 47.75.X.XXX   (小写的时候直接用户名跟密码-l username -p password)</span><br></pre></td></tr></table></figure>
-<p>&#160; &#160; &#160;&#160;发现3389端口是打开的,一顿爆破之后发现不是telnet服务,而是ssl</p>
-<h3 id="子域名查询"><a href="#子域名查询" class="headerlink" title="子域名查询"></a>子域名查询</h3><hr>
-<p>&#160; &#160; &#160;&#160;在线查询工具：<a href="https://pentest-tools.com/information-gathering/find-subdomains-of-domain" target="_blank" rel="noopener">点击这里</a></p>
-<p>&#160; &#160; &#160;&#160;没有收获</p>
-<h3 id="继续收集信息"><a href="#继续收集信息" class="headerlink" title="继续收集信息"></a>继续收集信息</h3><hr>
-<p>&#160; &#160; &#160;&#160;SEO综合查询：<a href="https://www.aizhan.com/" target="_blank" rel="noopener">点击这里</a></p>
-<p>&#160; &#160; &#160;&#160;找到同一个注册人的另一个网站(B网站),同样是一个经营租号业务的网站,注册邮箱是QQ邮箱,先加他好友,看能不能动之以情。</p>
-<p>&#160; &#160; &#160;&#160;一天后…..</p>
-<p>&#160; &#160; &#160;&#160;没回应…..</p>
-<h3 id="Github收集信息"><a href="#Github收集信息" class="headerlink" title="Github收集信息"></a>Github收集信息</h3><hr>
-<p>&#160; &#160; &#160;&#160;发现有B网站的开源代码,另外发现三个子域名。</p>
-<h3 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h3><hr>
-<p>在B网站看到了客服QQ,客服给了另外一个邮箱登录地址<a href="http://mx.banmajs.com/mail" target="_blank" rel="noopener">点击这里</a>,完美解决问题,累……….</p>
+        <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>#if defined 相较于 #ifdef后面确实是可以接多个宏，但是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#if defined A || B</span><br></pre></td></tr></table></figure></p>
+<p>的写法是错误的，正确的写法应该是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#if defined A || defined B</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -386,8 +368,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/18/web/eclipse-to-idea/" rel="next" title="关于eclipse与myeclipse中的工程如何在IDEA中运行">
-                <i class="fa fa-chevron-left"></i> 关于eclipse与myeclipse中的工程如何在IDEA中运行
+              <a href="/2018/05/16/windows/excel-find-amcro/undefined/bf1c2fd3/" rel="next" title="excel2007 .xlsm文件中查看宏代码">
+                <i class="fa fa-chevron-left"></i> excel2007 .xlsm文件中查看宏代码
               </a>
             
           </div>
@@ -396,8 +378,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/27/hexo/comments/" rel="prev" title="hexo Next主题 5.1.4版本下配置Gitalk">
-                hexo Next主题 5.1.4版本下配置Gitalk <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/18/web/eclipse-to-idea/undefined/8623d21/" rel="prev" title="关于eclipse与myeclipse中的工程如何在IDEA中运行">
+                关于eclipse与myeclipse中的工程如何在IDEA中运行 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -484,7 +466,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">杜焰</p>
-              <p class="site-description motion-element" itemprop="description">coding...</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -547,7 +529,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查邮箱服务器的IP地址"><span class="nav-number">2.</span> <span class="nav-text">查邮箱服务器的IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口扫描"><span class="nav-number">3.</span> <span class="nav-text">端口扫描</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子域名查询"><span class="nav-number">4.</span> <span class="nav-text">子域名查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继续收集信息"><span class="nav-number">5.</span> <span class="nav-text">继续收集信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github收集信息"><span class="nav-number">6.</span> <span class="nav-text">Github收集信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尾声"><span class="nav-number">7.</span> <span class="nav-text">尾声</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">1.</span> <span class="nav-text">注意点</span></a></li></ol></div>
             
 
           </div>
@@ -738,6 +720,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

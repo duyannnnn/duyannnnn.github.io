@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-27T13:46:51.121Z</updated>
+  <updated>2018-07-27T15:11:31.607Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>hexo Next主题 5.1.4版本下配置Gitalk</title>
-    <link href="http://yoursite.com/2018/07/27/hexo/comments/"/>
-    <id>http://yoursite.com/2018/07/27/hexo/comments/</id>
+    <link href="http://yoursite.com/2018/07/27/hexo/comments/undefined/59d52da5/"/>
+    <id>http://yoursite.com/2018/07/27/hexo/comments/undefined/59d52da5/</id>
     <published>2018-07-27T13:03:58.000Z</published>
-    <updated>2018-07-27T13:46:51.121Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr><p>&#160; &#160; &#160;&#160;关于配置gitalk,本文不求最详细，但求最简单粗暴。适合踩过一些坑之后的同学,从0开始的同学建议结合其它教程使用。</p><h2 id="添加代码"><a href="#添加代码" class="headerlink" title="添加代码"></a>添加代码</h2><hr><p>&#160; &#160; &#160;&#160;位置：blog/themes/next/layout/post.swig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line"></span><br><span class="line">  &lt;div id=&quot;posts&quot; class=&quot;posts-expand&quot;&gt;</span><br><span class="line">    &#123;&#123; post_template.render(page) &#125;&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;post-spread&quot;&gt;</span><br><span class="line">      &#123;% if theme.jiathis %&#125;</span><br><span class="line">        &#123;% include &apos;_partials/share/jiathis.swig&apos; %&#125;</span><br><span class="line">      &#123;% elseif theme.baidushare %&#125;</span><br><span class="line">        &#123;% include &apos;_partials/share/baidushare.swig&apos; %&#125;</span><br><span class="line">      &#123;% elseif theme.add_this_id %&#125;</span><br><span class="line">        &#123;% include &apos;_partials/share/add-this.swig&apos; %&#125;</span><br><span class="line">      &#123;% elseif theme.duoshuo_shortname and theme.duoshuo_share %&#125;</span><br><span class="line">        &#123;% include &apos;_partials/share/duoshuo_share.swig&apos; %&#125;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;!-- 下一行是要添加的代码 start  --&gt;</span><br><span class="line">  &lt;!-- Link Gitalk 的支持文件  --&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/gitalk/dist/gitalk.css&quot;&gt;</span><br><span class="line">    &lt;script src=&quot;https://unpkg.com/gitalk@latest/dist/gitalk.min.js&quot;&gt;&lt;/script&gt; </span><br><span class="line">    &lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;     &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var gitalk = new Gitalk(&#123;</span><br><span class="line"></span><br><span class="line">    // gitalk的主要参数</span><br><span class="line">        clientID: &apos;你的clientID,这个不会创建的话去其它教程看一下&apos;,</span><br><span class="line">        clientSecret: &apos;你的clientSecret,这个不会创建的话去其它教程看一下&apos;,</span><br><span class="line">        repo: &apos;你的仓库名，仓库名，仓库名，不是地址！&apos;,</span><br><span class="line">        owner: &apos;你的用户名&apos;,</span><br><span class="line">        admin: [&apos;你的用户名&apos;],</span><br><span class="line">        id: window.location.pathname,</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">    gitalk.render(&apos;gitalk-container&apos;);</span><br><span class="line">  &lt;/script&gt; </span><br><span class="line">  &lt;!-- Gitalk end --&gt;</span><br><span class="line">  &lt;!-- 到一上行结束 end  --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure><p>&#160; &#160; &#160;&#160;把文件中添加的代码加上(看注释),然后把后面的参数填上。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><hr><p>&#160; &#160; &#160;&#160;1. GitHub -&gt; OAuth -&gt; Authorization callback URL：这里要填博客地址,绑定了域名就填域名。加http(s)://<br>&#160; &#160; &#160;&#160;2. 上面代码中repo后面可以用一个新建的仓库,但注意只填名字就行了。<br>&#160; &#160; &#160;&#160;3. 用户名要填对。</p>]]></content>
     
@@ -42,10 +42,10 @@
   
   <entry>
     <title>mx.zugehao.com不能登录的,看这里！！！</title>
-    <link href="http://yoursite.com/2018/07/27/practice/3389/"/>
-    <id>http://yoursite.com/2018/07/27/practice/3389/</id>
+    <link href="http://yoursite.com/2018/07/27/practice/3389/undefined/5354b010/"/>
+    <id>http://yoursite.com/2018/07/27/practice/3389/undefined/5354b010/</id>
     <published>2018-07-27T03:23:58.000Z</published>
-    <updated>2018-07-27T06:45:07.645Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><hr><p>&#160; &#160; &#160;&#160;由于之前没玩过steam的游戏,刚好那天steam客户端被劫持,不小心买到了租号公司的游戏,给的邮箱是他们公司的邮箱,后来邮箱就登不上了。　　</p><h3 id="查邮箱服务器的IP地址"><a href="#查邮箱服务器的IP地址" class="headerlink" title="查邮箱服务器的IP地址"></a>查邮箱服务器的IP地址</h3><hr><p>&#160; &#160; &#160;&#160;47.75.X.XXX,阿里云主机</p><h3 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h3><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmap -p 3389 47.75.X.XXX</span><br><span class="line">nmap -p 1-65535 -T4 -A -v 47.75.X.XXX</span><br><span class="line">hydra -L username.txt -P password.txt -s port 47.75.X.XXX   (小写的时候直接用户名跟密码-l username -p password)</span><br></pre></td></tr></table></figure><p>&#160; &#160; &#160;&#160;发现3389端口是打开的,一顿爆破之后发现不是telnet服务,而是ssl</p><h3 id="子域名查询"><a href="#子域名查询" class="headerlink" title="子域名查询"></a>子域名查询</h3><hr><p>&#160; &#160; &#160;&#160;在线查询工具：<a href="https://pentest-tools.com/information-gathering/find-subdomains-of-domain" target="_blank" rel="noopener">点击这里</a></p><p>&#160; &#160; &#160;&#160;没有收获</p><h3 id="继续收集信息"><a href="#继续收集信息" class="headerlink" title="继续收集信息"></a>继续收集信息</h3><hr><p>&#160; &#160; &#160;&#160;SEO综合查询：<a href="https://www.aizhan.com/" target="_blank" rel="noopener">点击这里</a></p><p>&#160; &#160; &#160;&#160;找到同一个注册人的另一个网站(B网站),同样是一个经营租号业务的网站,注册邮箱是QQ邮箱,先加他好友,看能不能动之以情。</p><p>&#160; &#160; &#160;&#160;一天后…..</p><p>&#160; &#160; &#160;&#160;没回应…..</p><h3 id="Github收集信息"><a href="#Github收集信息" class="headerlink" title="Github收集信息"></a>Github收集信息</h3><hr><p>&#160; &#160; &#160;&#160;发现有B网站的开源代码,另外发现三个子域名。</p><h3 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h3><hr><p>在B网站看到了客服QQ,客服给了另外一个邮箱登录地址<a href="http://mx.banmajs.com/mail" target="_blank" rel="noopener">点击这里</a>,完美解决问题,累……….</p>]]></content>
     
@@ -66,10 +66,10 @@
   
   <entry>
     <title>关于eclipse与myeclipse中的工程如何在IDEA中运行</title>
-    <link href="http://yoursite.com/2018/05/18/web/eclipse-to-idea/"/>
-    <id>http://yoursite.com/2018/05/18/web/eclipse-to-idea/</id>
+    <link href="http://yoursite.com/2018/05/18/web/eclipse-to-idea/undefined/8623d21/"/>
+    <id>http://yoursite.com/2018/05/18/web/eclipse-to-idea/undefined/8623d21/</id>
     <published>2018-05-18T09:16:40.000Z</published>
-    <updated>2018-05-18T09:29:12.296Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/u014639129/article/details/52489718" target="_blank" rel="noopener">eclipse-to-idea</a></p>]]></content>
     
@@ -90,10 +90,10 @@
   
   <entry>
     <title>关于#if defined</title>
-    <link href="http://yoursite.com/2018/05/17/c/if-defind-used/"/>
-    <id>http://yoursite.com/2018/05/17/c/if-defind-used/</id>
+    <link href="http://yoursite.com/2018/05/17/c/if-defind-used/undefined/c06a3bf0/"/>
+    <id>http://yoursite.com/2018/05/17/c/if-defind-used/undefined/c06a3bf0/</id>
     <published>2018-05-17T03:16:31.000Z</published>
-    <updated>2018-05-17T03:25:43.247Z</updated>
+    <updated>2018-07-27T15:11:31.591Z</updated>
     
     <content type="html"><![CDATA[<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>#if defined 相较于 #ifdef后面确实是可以接多个宏，但是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#if defined A || B</span><br></pre></td></tr></table></figure></p><p>的写法是错误的，正确的写法应该是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#if defined A || defined B</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -113,10 +113,10 @@
   
   <entry>
     <title>excel2007 .xlsm文件中查看宏代码</title>
-    <link href="http://yoursite.com/2018/05/16/windows/excel-find-Macro/"/>
-    <id>http://yoursite.com/2018/05/16/windows/excel-find-Macro/</id>
+    <link href="http://yoursite.com/2018/05/16/windows/excel-find-amcro/undefined/bf1c2fd3/"/>
+    <id>http://yoursite.com/2018/05/16/windows/excel-find-amcro/undefined/bf1c2fd3/</id>
     <published>2018-05-16T08:47:32.000Z</published>
-    <updated>2018-05-16T08:51:58.048Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<ul><li>不能使用wps，wps需要插件才能查看宏代码。</li><li>视图—&gt;宏—&gt;查看宏(VBS代码)</li></ul>]]></content>
     
@@ -140,10 +140,10 @@
   
   <entry>
     <title>关于wps不能使用excel宏</title>
-    <link href="http://yoursite.com/2018/05/08/%E4%B9%8C%E4%BA%91/2018-5-18/"/>
-    <id>http://yoursite.com/2018/05/08/乌云/2018-5-18/</id>
+    <link href="http://yoursite.com/2018/05/08/%E4%B9%8C%E4%BA%91/2018-5-18/undefined/fac85dbf/"/>
+    <id>http://yoursite.com/2018/05/08/乌云/2018-5-18/undefined/fac85dbf/</id>
     <published>2018-05-08T01:02:18.000Z</published>
-    <updated>2018-05-08T01:03:59.125Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Excel宏"><a href="#Excel宏" class="headerlink" title="Excel宏"></a>Excel宏</h1><p>wps要使用宏需要安装vba6.mis<br>宏可以执行vb代码</p><h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>利用DNS服务器获取IP地址，IP地址可以转换成四个字节得到数据。以此传输数据绕过防火墙。</p>]]></content>
     
@@ -164,10 +164,10 @@
   
   <entry>
     <title>cmd命令行复制操作</title>
-    <link href="http://yoursite.com/2018/04/25/windows/windows-copy/"/>
-    <id>http://yoursite.com/2018/04/25/windows/windows-copy/</id>
+    <link href="http://yoursite.com/2018/04/25/windows/windows-copy/undefined/b4fc98c5/"/>
+    <id>http://yoursite.com/2018/04/25/windows/windows-copy/undefined/b4fc98c5/</id>
     <published>2018-04-25T09:45:31.000Z</published>
-    <updated>2018-04-26T06:41:34.161Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<h3 id="本地"><a href="#本地" class="headerlink" title="本地"></a>本地</h3><p>copy 1.txt D:\test\</p><h3 id="网络路径"><a href="#网络路径" class="headerlink" title="网络路径"></a>网络路径</h3><p>copy 1.txt \192.168.1.1\test\</p><p><strong>需要注意的地方</strong></p><ul><li>windows下所有路径中都是反斜杠而不是斜杠</li><li>路径以斜杠开头时为什么要两个反斜杠？<br>因为 \ 在 C/C++/C# 中是转义前导字符，例如 \n 代表换行，如果路径中刚好有类似转义字符开头的，那么就会引起问题，所以路径中的 \ 必须用 \\ 的形式。</li><li>windows下表示参数也是斜杠，跟linux一样，如systeminfo | findstr /B /C:”OS”</li></ul><p><strong>展开</strong></p><blockquote><p>http://<br>http后面也跟了两个斜杠，其实一个斜杠或者没有斜杠也是可以的。</p></blockquote>]]></content>
     
@@ -188,10 +188,10 @@
   
   <entry>
     <title>关于windows中添加网络位置与映射网络驱动器的区别</title>
-    <link href="http://yoursite.com/2018/04/23/windows/%E5%85%B3%E4%BA%8Ewindows%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8B%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/"/>
-    <id>http://yoursite.com/2018/04/23/windows/关于windows局域网下文件共享/</id>
+    <link href="http://yoursite.com/2018/04/23/windows/windows-lan-file-share/undefined/3ee39e03/"/>
+    <id>http://yoursite.com/2018/04/23/windows/windows-lan-file-share/undefined/3ee39e03/</id>
     <published>2018-04-23T08:26:19.000Z</published>
-    <updated>2018-04-23T09:15:34.054Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<h3 id="网络位置"><a href="#网络位置" class="headerlink" title="网络位置"></a>网络位置</h3><ul><li>无盘符</li><li>只是一个标记，功能不多，例如不能被设备上其它工程访问到</li><li>占的通信流量少，如果只是简单的文件传输，可以用这个</li></ul><h3 id="网络驱动器"><a href="#网络驱动器" class="headerlink" title="网络驱动器"></a>网络驱动器</h3><ul><li>有盘符</li><li>相当于本地的磁盘</li><li>占的通信流量多</li></ul>]]></content>
     
@@ -214,10 +214,10 @@
   
   <entry>
     <title>TCP三次握手四次挥手</title>
-    <link href="http://yoursite.com/2018/04/21/%E7%BD%91%E7%BB%9C/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/"/>
-    <id>http://yoursite.com/2018/04/21/网络/TCP三次握手四次挥手/</id>
+    <link href="http://yoursite.com/2018/04/21/%E7%BD%91%E7%BB%9C/tcp_three_hello_four_bye/undefined/627d7c1/"/>
+    <id>http://yoursite.com/2018/04/21/网络/tcp_three_hello_four_bye/undefined/627d7c1/</id>
     <published>2018-04-21T12:30:04.000Z</published>
-    <updated>2018-04-21T12:33:07.889Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>　　客户端：你好！我想跟你建立连接（SYN=1），我随机生成一个号码（Seq=x）给你。<br>　　服务端：你好！我确认（ACK=1）了，你真的要建立连接（SYN=1）吗？我把你给的随机号加1还给你（ack=x+1）,我也给你生成一随机号（Seq=y）。<br>　　客户端：你好！看到你确认了，我得核对（ack是否等于我第一次给你的随机号x加1，ACK是否等于1）一下，核对没问题，那我也确认（ACK=1）了，也把你给的随机号加1（ack=y+1）一起发给你。</p><blockquote><p>最后服务端核对（ack是否等于y加1，ACK是否等于1）,核对成功那么就可以建立连接了。</p></blockquote><h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>　　客户端：你好！再见（FIN）了，给你说完这句话我就不会回你了，不过你还有什么想对我说的吗？我还是可以听到的，我随机生成一个号码（Seq=x）给你。<br>　　服务端：你好！我确认（与握手的确认一样）看到你说的话了。我组织一下语言看看我还有什么想说的。我随机生成一个号码（Seq=y）给你。<br>　　．．．．．（服务端给客户端的信息，如果有的话）<br>　　服务端：你好！我说完了，再见（FIN）！我随机生成一个号码（Seq=z）给你。<br>　　客户端：你好！我也确认（与握手的确认一样）看到你说的话了。</p><blockquote><p>最后服务端核对（ack是否等于z加1，ACK是否等于1）,核对成功那么就可以建立连接了。</p></blockquote><p><strong>备注</strong>：每次都会生成随机号（Seq）与将接收到的随机号加一赋值给ack(ack=Seq+1)，以上为了不冗余有省略。</p>]]></content>
     
@@ -237,10 +237,10 @@
   
   <entry>
     <title>关于段地址与偏移地址(8086CPU)</title>
-    <link href="http://yoursite.com/2018/04/20/%E6%B1%87%E7%BC%96/segment_and_offset_address/"/>
-    <id>http://yoursite.com/2018/04/20/汇编/segment_and_offset_address/</id>
+    <link href="http://yoursite.com/2018/04/20/%E6%B1%87%E7%BC%96/segment-and-offset-address/undefined/645fcee2/"/>
+    <id>http://yoursite.com/2018/04/20/汇编/segment-and-offset-address/undefined/645fcee2/</id>
     <published>2018-04-20T09:23:58.000Z</published>
-    <updated>2018-04-20T09:57:00.984Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<h3 id="为什么要用段地址与偏移地址来决定物理地址"><a href="#为什么要用段地址与偏移地址来决定物理地址" class="headerlink" title="为什么要用段地址与偏移地址来决定物理地址"></a>为什么要用段地址与偏移地址来决定物理地址</h3><p>　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？<br>　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的时候不要把注意力放在段地址上面。而是80 * 10(段地址 * 16)上面，CPU称之为基础地址，8086CPU读取内存中的数据就是利用这种方式寻址的。<br>　　所以内存中其实是没有一个一个段的，就是这843块钱也可以是843张一元大钞一样。</p>]]></content>
     
@@ -260,10 +260,10 @@
   
   <entry>
     <title>第一次搭建hexo+github遇到的坑</title>
-    <link href="http://yoursite.com/2018/04/19/hexo/hexo_first/"/>
-    <id>http://yoursite.com/2018/04/19/hexo/hexo_first/</id>
+    <link href="http://yoursite.com/2018/04/19/hexo/hexo-first/undefined/3e73ea95/"/>
+    <id>http://yoursite.com/2018/04/19/hexo/hexo-first/undefined/3e73ea95/</id>
     <published>2018-04-19T03:23:58.000Z</published>
-    <updated>2018-07-27T13:03:51.571Z</updated>
+    <updated>2018-07-27T15:11:31.607Z</updated>
     
     <content type="html"><![CDATA[<h3 id="hexo-d提交不成功"><a href="#hexo-d提交不成功" class="headerlink" title="hexo d提交不成功"></a>hexo d提交不成功</h3><ul><li>配置Git环境变量，配置完一定要退出当前shell环境，重新打开。</li><li>删除<strong>.deploy_git</strong>文件夹，重新运行hexo g, hexo d。</li><li>在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。<blockquote><p>INFO  Deploying: git<br>INFO  Clearing .deploy_git folder…<br>INFO  Copying files from public folder…<br>INFO  Copying files from extend dirs…</p></blockquote></li></ul><h3 id="执行hexo-d命令时总是要输出github的用户名和密码"><a href="#执行hexo-d命令时总是要输出github的用户名和密码" class="headerlink" title="执行hexo d命令时总是要输出github的用户名和密码"></a>执行hexo d命令时总是要输出github的用户名和密码</h3><ul><li>win7可以这么解决，<a href="https://blog.csdn.net/forevercjl/article/details/39557713" target="_blank" rel="noopener">https://blog.csdn.net/forevercjl/article/details/39557713</a></li><li>修改最外层的_config.yml仓库repo, 去github复制链接，https改为ssh形式的，由于电脑上有私钥，故不再需要输入账号密码。</li></ul>]]></content>
     
