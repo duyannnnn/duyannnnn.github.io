@@ -421,7 +421,7 @@
         repo: 'gitalk-comments',
         owner: 'duyannnnn',
         admin: ['duyannnnn'],
-        id: window.location.pathname,
+        id: decodeURI(window.location.pathname),
 
     });
     gitalk.render('gitalk-container');
