@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="杜焰">
 <meta property="og:description" content="写在前面 &amp;#160; &amp;#160; &amp;#160;&amp;#160;由于之前没玩过steam的游戏,刚好那天steam客户端被劫持,不小心买到了租号公司的游戏,给的邮箱是他们公司的邮箱,后来邮箱就登不上了。 　　 查邮箱服务器的IP地址 &amp;#160; &amp;#160; &amp;#160;&amp;#160;47.75.X.XXX,阿里云主机 端口扫描 123nmap -p 3389 47.75.X.XXXnmap -p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-27T06:40:41.437Z">
+<meta property="og:updated_time" content="2018-07-27T06:45:07.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mx.zugehao.com不能登录的,看这里！！！">
 <meta name="twitter:description" content="写在前面 &amp;#160; &amp;#160; &amp;#160;&amp;#160;由于之前没玩过steam的游戏,刚好那天steam客户端被劫持,不小心买到了租号公司的游戏,给的邮箱是他们公司的邮箱,后来邮箱就登不上了。 　　 查邮箱服务器的IP地址 &amp;#160; &amp;#160; &amp;#160;&amp;#160;47.75.X.XXX,阿里云主机 端口扫描 123nmap -p 3389 47.75.X.XXXnmap -p">
@@ -340,14 +340,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmap -p 3389 47.75.X.XXX</span><br><span class="line">nmap -p 1-65535 -T4 -A -v 47.75.X.XXX</span><br><span class="line">hydra -L username.txt -P password.txt -s port 47.75.X.XXX   (小写的时候直接用户名跟密码-l username -p password)</span><br></pre></td></tr></table></figure>
 <p>&#160; &#160; &#160;&#160;发现3389端口是打开的,一顿爆破之后发现不是telnet服务,而是ssl</p>
 <h3 id="子域名查询"><a href="#子域名查询" class="headerlink" title="子域名查询"></a>子域名查询</h3><hr>
-<p>&#160; &#160; &#160;&#160;在线查询工具：<a href="http://note.youdao.com/" target="_blank" rel="noopener">https://pentest-tools.com/information-gathering/find-subdomains-of-domain</a></p>
+<p>&#160; &#160; &#160;&#160;在线查询工具：<a href="https://pentest-tools.com/information-gathering/find-subdomains-of-domain" target="_blank" rel="noopener">点击这里</a></p>
 <p>&#160; &#160; &#160;&#160;没有收获</p>
-<h3 id="继续收集信息"><a href="#继续收集信息" class="headerlink" title="继续收集信息"></a>继续收集信息</h3><p>&#160; &#160; &#160;&#160;SEO综合查询：<a href="http://note.youdao.com/" target="_blank" rel="noopener">https://www.aizhan.com/</a></p>
+<h3 id="继续收集信息"><a href="#继续收集信息" class="headerlink" title="继续收集信息"></a>继续收集信息</h3><hr>
+<p>&#160; &#160; &#160;&#160;SEO综合查询：<a href="https://www.aizhan.com/" target="_blank" rel="noopener">点击这里</a></p>
 <p>&#160; &#160; &#160;&#160;找到同一个注册人的另一个网站(B网站),同样是一个经营租号业务的网站,注册邮箱是QQ邮箱,先加他好友,看能不能动之以情。</p>
 <p>&#160; &#160; &#160;&#160;一天后…..</p>
 <p>&#160; &#160; &#160;&#160;没回应…..</p>
-<h3 id="Github收集信息"><a href="#Github收集信息" class="headerlink" title="Github收集信息"></a>Github收集信息</h3><p>&#160; &#160; &#160;&#160;发现有B网站的开源代码,另外发现三个子域名。</p>
-<h3 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h3><p>在B网站看到了客服QQ,客服给了另外一个邮箱登录地址<a href="http://mx.banmajs.com/" target="_blank" rel="noopener">点击这里</a>,完美解决问题,累……….</p>
+<h3 id="Github收集信息"><a href="#Github收集信息" class="headerlink" title="Github收集信息"></a>Github收集信息</h3><hr>
+<p>&#160; &#160; &#160;&#160;发现有B网站的开源代码,另外发现三个子域名。</p>
+<h3 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h3><hr>
+<p>在B网站看到了客服QQ,客服给了另外一个邮箱登录地址<a href="http://mx.banmajs.com/mail" target="_blank" rel="noopener">点击这里</a>,完美解决问题,累……….</p>
 
       
     </div>
