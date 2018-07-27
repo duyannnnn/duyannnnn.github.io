@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="coding...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杜焰">
-<meta property="og:url" content="http://duyana.top/page/2/index.html">
+<meta name="description" content="三次握手　　客户端：你好！我想跟你建立连接（SYN=1），我随机生成一个号码（Seq=x）给你。　　服务端：你好！我确认（ACK=1）了，你真的要建立连接（SYN=1）吗？我把你给的随机号加1还给你（ack=x+1）,我也给你生成一随机号（Seq=y）。　　客户端：你好！看到你确认了，我得核对（ack是否等于我第一次给你的随机号x加1，ACK是否等于1）一下，核对没问题，那我也确认（ACK=1）了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP三次握手四次挥手">
+<meta property="og:url" content="http://duyana.top/627d7c1/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="coding...">
+<meta property="og:description" content="三次握手　　客户端：你好！我想跟你建立连接（SYN=1），我随机生成一个号码（Seq=x）给你。　　服务端：你好！我确认（ACK=1）了，你真的要建立连接（SYN=1）吗？我把你给的随机号加1还给你（ack=x+1）,我也给你生成一随机号（Seq=y）。　　客户端：你好！看到你确认了，我得核对（ack是否等于我第一次给你的随机号x加1，ACK是否等于1）一下，核对没问题，那我也确认（ACK=1）了">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-27T15:11:31.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杜焰">
-<meta name="twitter:description" content="coding...">
+<meta name="twitter:title" content="TCP三次握手四次挥手">
+<meta name="twitter:description" content="三次握手　　客户端：你好！我想跟你建立连接（SYN=1），我随机生成一个号码（Seq=x）给你。　　服务端：你好！我确认（ACK=1）了，你真的要建立连接（SYN=1）吗？我把你给的随机号加1还给你（ack=x+1）,我也给你生成一随机号（Seq=y）。　　客户端：你好！看到你确认了，我得核对（ack是否等于我第一次给你的随机号x加1，ACK是否等于1）一下，核对没问题，那我也确认（ACK=1）了">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://duyana.top/page/2/"/>
+  <link rel="canonical" href="http://duyana.top/627d7c1/"/>
 
 
 
 
 
-  <title>杜焰</title>
+  <title>TCP三次握手四次挥手 | 杜焰</title>
   
 
 
@@ -145,8 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,9 +229,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -244,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://duyana.top/3e73ea95/">
+    <link itemprop="mainEntityOfPage" href="http://duyana.top/627d7c1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜焰">
@@ -261,9 +261,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/3e73ea95/" itemprop="url">第一次搭建hexo+github遇到的坑</a></h2>
+          <h2 class="post-title" itemprop="name headline">TCP三次握手四次挥手</h2>
         
 
         <div class="post-meta">
@@ -275,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T11:23:58+08:00">
-                2018-04-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T20:30:04+08:00">
+                2018-04-21
               </time>
             
 
@@ -287,9 +285,9 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>171 字</span>
+              <span>433 字</span>
               &nbsp; | &nbsp;
-              <span>1 min</span>
+              <span>2 min</span>
               </span>
             
           </span>
@@ -307,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/network/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -344,22 +342,16 @@
       
 
       
-        
-          
-          hexo d提交不成功
-配置Git环境变量，配置完一定要退出当前shell环境，重新打开。
-删除.deploy_git文件夹，重新运行hexo g, hexo d。
-在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。
-INFO  Deploying: 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/3e73ea95/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>　　客户端：你好！我想跟你建立连接（SYN=1），我随机生成一个号码（Seq=x）给你。<br>　　服务端：你好！我确认（ACK=1）了，你真的要建立连接（SYN=1）吗？我把你给的随机号加1还给你（ack=x+1）,我也给你生成一随机号（Seq=y）。<br>　　客户端：你好！看到你确认了，我得核对（ack是否等于我第一次给你的随机号x加1，ACK是否等于1）一下，核对没问题，那我也确认（ACK=1）了，也把你给的随机号加1（ack=y+1）一起发给你。</p>
+<blockquote>
+<p>最后服务端核对（ack是否等于y加1，ACK是否等于1）,核对成功那么就可以建立连接了。</p>
+</blockquote>
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>　　客户端：你好！再见（FIN）了，给你说完这句话我就不会回你了，不过你还有什么想对我说的吗？我还是可以听到的，我随机生成一个号码（Seq=x）给你。<br>　　服务端：你好！我确认（与握手的确认一样）看到你说的话了。我组织一下语言看看我还有什么想说的。我随机生成一个号码（Seq=y）给你。<br>　　．．．．．（服务端给客户端的信息，如果有的话）<br>　　服务端：你好！我说完了，再见（FIN）！我随机生成一个号码（Seq=z）给你。<br>　　客户端：你好！我也确认（与握手的确认一样）看到你说的话了。</p>
+<blockquote>
+<p>最后服务端核对（ack是否等于z加1，ACK是否等于1）,核对成功那么就可以建立连接了。</p>
+</blockquote>
+<p><strong>备注</strong>：每次都会生成随机号（Seq）与将接收到的随机号加一赋值给ack(ack=Seq+1)，以上为了不冗余有省略。</p>
+
       
     </div>
     
@@ -376,12 +368,32 @@ INFO  Deploying:
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/645fcee2/" rel="next" title="关于段地址与偏移地址(8086CPU)">
+                <i class="fa fa-chevron-left"></i> 关于段地址与偏移地址(8086CPU)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/3ee39e03/" rel="prev" title="关于windows中添加网络位置与映射网络驱动器的区别">
+                关于windows中添加网络位置与映射网络驱动器的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -391,14 +403,30 @@ INFO  Deploying:
   </article>
 
 
-    
-  </section>
 
+    <div class="post-spread">
+      
+    </div>
+  </div>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
+  <!-- Link Gitalk 的支持文件  -->
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+    <div id="gitalk-container"></div>     <script type="text/javascript">
+    var gitalk = new Gitalk({
 
+    // gitalk的主要参数
+        clientID: 'b3140ef051ce9745b8e2',
+        clientSecret: '57378b80da68673364b2e5d0bc53e39c1a4610db',
+        repo: 'gitalk-comments',
+        owner: 'duyannnnn',
+        admin: ['duyannnnn'],
+        id: window.location.pathname,
+
+    });
+    gitalk.render('gitalk-container');
+  </script> 
+  <!-- Gitalk end -->
 
 
           </div>
@@ -406,6 +434,10 @@ INFO  Deploying:
 
 
           
+
+  
+
+
 
         </div>
         
@@ -426,8 +458,17 @@ INFO  Deploying:
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -485,6 +526,22 @@ INFO  Deploying:
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -613,6 +670,10 @@ INFO  Deploying:
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

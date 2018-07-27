@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="coding...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杜焰">
-<meta property="og:url" content="http://duyana.top/categories/hexo/index.html">
+<meta name="description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于段地址与偏移地址(8086CPU)">
+<meta property="og:url" content="http://duyana.top/645fcee2/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="coding...">
+<meta property="og:description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-27T15:11:31.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杜焰">
-<meta name="twitter:description" content="coding...">
+<meta name="twitter:title" content="关于段地址与偏移地址(8086CPU)">
+<meta name="twitter:description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://duyana.top/categories/hexo/"/>
+  <link rel="canonical" href="http://duyana.top/645fcee2/"/>
 
 
 
 
 
-  <title>分类: hexo | 杜焰</title>
+  <title>关于段地址与偏移地址(8086CPU) | 杜焰</title>
   
 
 
@@ -145,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,83 +230,195 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>hexo<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://duyana.top/645fcee2/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杜焰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杜焰">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/59d52da5/" itemprop="url">
-              
-                <span itemprop="name">hexo Next主题 5.1.4版本下配置Gitalk</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">关于段地址与偏移地址(8086CPU)</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T21:03:58+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T17:23:58+08:00">
+                2018-04-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+			
+			
+              <span class="post-letters-count">
+              &nbsp; | &nbsp;
+              <span>235 字</span>
+              &nbsp; | &nbsp;
+              <span>1 min</span>
+              </span>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/collection/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/3e73ea95/" itemprop="url">
-              
-                <span itemprop="name">第一次搭建hexo+github遇到的坑</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-19T11:23:58+08:00"
-              content="2018-04-19" >
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h3 id="为什么要用段地址与偏移地址来决定物理地址"><a href="#为什么要用段地址与偏移地址来决定物理地址" class="headerlink" title="为什么要用段地址与偏移地址来决定物理地址"></a>为什么要用段地址与偏移地址来决定物理地址</h3><p>　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？<br>　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的时候不要把注意力放在段地址上面。而是80 * 10(段地址 * 16)上面，CPU称之为基础地址，8086CPU读取内存中的数据就是利用这种方式寻址的。<br>　　所以内存中其实是没有一个一个段的，就是这843块钱也可以是843张一元大钞一样。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/3e73ea95/" rel="next" title="第一次搭建hexo+github遇到的坑">
+                <i class="fa fa-chevron-left"></i> 第一次搭建hexo+github遇到的坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/627d7c1/" rel="prev" title="TCP三次握手四次挥手">
+                TCP三次握手四次挥手 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
   
+  <!-- Link Gitalk 的支持文件  -->
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+    <div id="gitalk-container"></div>     <script type="text/javascript">
+    var gitalk = new Gitalk({
 
+    // gitalk的主要参数
+        clientID: 'b3140ef051ce9745b8e2',
+        clientSecret: '57378b80da68673364b2e5d0bc53e39c1a4610db',
+        repo: 'gitalk-comments',
+        owner: 'duyannnnn',
+        admin: ['duyannnnn'],
+        id: window.location.pathname,
+
+    });
+    gitalk.render('gitalk-container');
+  </script> 
+  <!-- Gitalk end -->
 
 
           </div>
@@ -313,6 +426,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -333,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -392,6 +518,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用段地址与偏移地址来决定物理地址"><span class="nav-number">1.</span> <span class="nav-text">为什么要用段地址与偏移地址来决定物理地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -520,6 +662,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
