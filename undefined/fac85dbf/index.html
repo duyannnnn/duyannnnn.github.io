@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
+<meta name="description" content="Excel宏wps要使用宏需要安装vba6.mis宏可以执行vb代码 tips利用DNS服务器获取IP地址，IP地址可以转换成四个字节得到数据。以此传输数据绕过防火墙。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于段地址与偏移地址(8086CPU)">
-<meta property="og:url" content="http://duyana.top/posts/645fcee2/index.html">
+<meta property="og:title" content="关于wps不能使用excel宏">
+<meta property="og:url" content="http://duyana.top/undefined/fac85dbf/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
+<meta property="og:description" content="Excel宏wps要使用宏需要安装vba6.mis宏可以执行vb代码 tips利用DNS服务器获取IP地址，IP地址可以转换成四个字节得到数据。以此传输数据绕过防火墙。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-07-27T15:11:31.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于段地址与偏移地址(8086CPU)">
-<meta name="twitter:description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
+<meta name="twitter:title" content="关于wps不能使用excel宏">
+<meta name="twitter:description" content="Excel宏wps要使用宏需要安装vba6.mis宏可以执行vb代码 tips利用DNS服务器获取IP地址，IP地址可以转换成四个字节得到数据。以此传输数据绕过防火墙。">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://duyana.top/posts/645fcee2/"/>
+  <link rel="canonical" href="http://duyana.top/undefined/fac85dbf/"/>
 
 
 
 
 
-  <title>关于段地址与偏移地址(8086CPU) | 杜焰</title>
+  <title>关于wps不能使用excel宏 | 杜焰</title>
   
 
 
@@ -244,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://duyana.top/posts/645fcee2/">
+    <link itemprop="mainEntityOfPage" href="http://duyana.top/undefined/fac85dbf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜焰">
@@ -261,7 +261,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">关于段地址与偏移地址(8086CPU)</h2>
+          <h2 class="post-title" itemprop="name headline">关于wps不能使用excel宏</h2>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T17:23:58+08:00">
-                2018-04-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T09:02:18+08:00">
+                2018-05-08
               </time>
             
 
@@ -285,7 +285,7 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>235 字</span>
+              <span>58 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
               </span>
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/collection/" itemprop="url" rel="index">
-                    <span itemprop="name">汇编</span>
+                  <a href="/categories/乌云/" itemprop="url" rel="index">
+                    <span itemprop="name">乌云</span>
                   </a>
                 </span>
 
@@ -342,7 +342,8 @@
       
 
       
-        <h3 id="为什么要用段地址与偏移地址来决定物理地址"><a href="#为什么要用段地址与偏移地址来决定物理地址" class="headerlink" title="为什么要用段地址与偏移地址来决定物理地址"></a>为什么要用段地址与偏移地址来决定物理地址</h3><p>　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？<br>　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的时候不要把注意力放在段地址上面。而是80 * 10(段地址 * 16)上面，CPU称之为基础地址，8086CPU读取内存中的数据就是利用这种方式寻址的。<br>　　所以内存中其实是没有一个一个段的，就是这843块钱也可以是843张一元大钞一样。</p>
+        <h1 id="Excel宏"><a href="#Excel宏" class="headerlink" title="Excel宏"></a>Excel宏</h1><p>wps要使用宏需要安装vba6.mis<br>宏可以执行vb代码</p>
+<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>利用DNS服务器获取IP地址，IP地址可以转换成四个字节得到数据。以此传输数据绕过防火墙。</p>
 
       
     </div>
@@ -396,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/3e73ea95/" rel="next" title="第一次搭建hexo+github遇到的坑">
-                <i class="fa fa-chevron-left"></i> 第一次搭建hexo+github遇到的坑
+              <a href="/undefined/b4fc98c5/" rel="next" title="cmd命令行复制操作">
+                <i class="fa fa-chevron-left"></i> cmd命令行复制操作
               </a>
             
           </div>
@@ -406,8 +407,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/627d7c1/" rel="prev" title="TCP三次握手四次挥手">
-                TCP三次握手四次挥手 <i class="fa fa-chevron-right"></i>
+              <a href="/undefined/bf1c2fd3/" rel="prev" title="excel2007 .xlsm文件中查看宏代码">
+                excel2007 .xlsm文件中查看宏代码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,7 +558,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用段地址与偏移地址来决定物理地址"><span class="nav-number">1.</span> <span class="nav-text">为什么要用段地址与偏移地址来决定物理地址</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Excel宏"><span class="nav-number">1.</span> <span class="nav-text">Excel宏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tips"><span class="nav-number">2.</span> <span class="nav-text">tips</span></a></li></ol></div>
             
 
           </div>
