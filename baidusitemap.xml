@@ -40,6 +40,24 @@
 
     
   <url>
+    <loc>http://duyana.top/post/59d52da5/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>hexo Next主题 5.1.4版本下配置Gitalk</title>
+        <pubTime>2018-07-27T13:03:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://duyana.top/post/3e73ea95/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
@@ -94,17 +112,17 @@
 
     
   <url>
-    <loc>http://duyana.top/post/59d52da5/</loc>
+    <loc>http://duyana.top/post/627d7c1/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
         <display>
-        <title>hexo Next主题 5.1.4版本下配置Gitalk</title>
-        <pubTime>2018-07-27T13:03:58.000Z</pubTime>
+        <title>TCP三次握手四次挥手</title>
+        <pubTime>2018-04-21T12:30:04.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
+              <breadCrumb title="网络" url="http://duyana.top/categories/network/"/>
           
         </display>
     </data>
@@ -177,24 +195,6 @@
            
              
               <breadCrumb title="汇编" url="http://duyana.top/categories/collection/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/post/627d7c1/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>TCP三次握手四次挥手</title>
-        <pubTime>2018-04-21T12:30:04.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://duyana.top/categories/network/"/>
           
         </display>
     </data>
