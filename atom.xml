@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2018-07-27T15:11:31.607Z</updated>
+  <updated>2018-07-28T18:03:34.125Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>读《计算机是怎么跑起来的》---矢泽久雄/著</title>
+    <link href="http://duyana.top/63812160/"/>
+    <id>http://duyana.top/63812160/</id>
+    <published>2018-07-28T15:23:58.000Z</published>
+    <updated>2018-07-28T18:03:34.125Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr><p>&#160; &#160; &#160;&#160;买了这本书一直没有看，以为是很基础的一本计算机入门书，今天花了一天时候把它看完了，对于我来说收获还是挺多的，这本书只有257页，却把硬件、软件、数据结构、算法、面向对象、数据库、网络等知识点给介绍了一遍，内容通俗，见解却不失深度。</p><h2 id="一些收获"><a href="#一些收获" class="headerlink" title="一些收获"></a>一些收获</h2><hr><blockquote><p>为了驱动CPU的运转，称为“时钟信号”的电信号必不可少，这种电信号每隔一定时间就变换一次电平的高低。输出时钟信号的元件叫做“时钟发生器”。时钟发生器中带晶振，根据<strong>自身的频率</strong>产生时钟信号，时钟信号的频率可以衡量CPU的运转速度。 </p></blockquote><blockquote><p>无论是哪个程序，其内容都是数值的罗列，每个数值要么是指令，要么是数据。</p></blockquote><blockquote><p>无论是哪种编程语言，数据结构的基础都是数组，因此合理的、灵活的运用数组才是关键。</p></blockquote><blockquote><p>面向对象编程就是在为现实世界建模。</p></blockquote><blockquote><p>arp协议，计算机会发给每一台局域网内的其它计算机，“谁的IP地址是192.168.1.110(举例),请将你的MAC地址发给我”，以达到IP转MAC的目的。(arp协议利用:arp欺骗，详情可自行搜索)</p></blockquote><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr><p>&#160; &#160; &#160;&#160;这本书不是入门书箱，适合有一定基础的同学，且作者的个人见解比较多，不适合深入学习，但会对之后深入学习有很大的帮助。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;买了这本书一直没有看，以为是很基础的一本计算机入门书，今天花了一天时候把它看完
+      
+    
+    </summary>
+    
+      <category term="book" scheme="http://duyana.top/categories/book/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>hexo Next主题 5.1.4版本下配置Gitalk</title>
