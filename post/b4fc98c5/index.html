@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="eclipse-to-idea">
+<meta name="description" content="本地copy 1.txt D:\test\ 网络路径copy 1.txt \192.168.1.1\test\ 需要注意的地方  windows下所有路径中都是反斜杠而不是斜杠 路径以斜杠开头时为什么要两个反斜杠？因为 \ 在 C/C++/C# 中是转义前导字符，例如 \n 代表换行，如果路径中刚好有类似转义字符开头的，那么就会引起问题，所以路径中的 \ 必须用 \\ 的形式。 windows下表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于eclipse与myeclipse中的工程如何在IDEA中运行">
-<meta property="og:url" content="http://duyana.top/post8623d21/index.html">
+<meta property="og:title" content="cmd命令行复制操作">
+<meta property="og:url" content="http://duyana.top/post/b4fc98c5/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="eclipse-to-idea">
+<meta property="og:description" content="本地copy 1.txt D:\test\ 网络路径copy 1.txt \192.168.1.1\test\ 需要注意的地方  windows下所有路径中都是反斜杠而不是斜杠 路径以斜杠开头时为什么要两个反斜杠？因为 \ 在 C/C++/C# 中是转义前导字符，例如 \n 代表换行，如果路径中刚好有类似转义字符开头的，那么就会引起问题，所以路径中的 \ 必须用 \\ 的形式。 windows下表">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-07-27T15:11:31.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于eclipse与myeclipse中的工程如何在IDEA中运行">
-<meta name="twitter:description" content="eclipse-to-idea">
+<meta name="twitter:title" content="cmd命令行复制操作">
+<meta name="twitter:description" content="本地copy 1.txt D:\test\ 网络路径copy 1.txt \192.168.1.1\test\ 需要注意的地方  windows下所有路径中都是反斜杠而不是斜杠 路径以斜杠开头时为什么要两个反斜杠？因为 \ 在 C/C++/C# 中是转义前导字符，例如 \n 代表换行，如果路径中刚好有类似转义字符开头的，那么就会引起问题，所以路径中的 \ 必须用 \\ 的形式。 windows下表">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://duyana.top/post8623d21/"/>
+  <link rel="canonical" href="http://duyana.top/post/b4fc98c5/"/>
 
 
 
 
 
-  <title>关于eclipse与myeclipse中的工程如何在IDEA中运行 | 杜焰</title>
+  <title>cmd命令行复制操作 | 杜焰</title>
   
 
 
@@ -244,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://duyana.top/post8623d21/">
+    <link itemprop="mainEntityOfPage" href="http://duyana.top/post/b4fc98c5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜焰">
@@ -261,7 +261,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">关于eclipse与myeclipse中的工程如何在IDEA中运行</h2>
+          <h2 class="post-title" itemprop="name headline">cmd命令行复制操作</h2>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T17:16:40+08:00">
-                2018-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T17:45:31+08:00">
+                2018-04-25
               </time>
             
 
@@ -285,7 +285,7 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>3 字</span>
+              <span>168 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
               </span>
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
+                  <a href="/categories/windows/" itemprop="url" rel="index">
+                    <span itemprop="name">windows</span>
                   </a>
                 </span>
 
@@ -342,7 +342,18 @@
       
 
       
-        <p><a href="https://blog.csdn.net/u014639129/article/details/52489718" target="_blank" rel="noopener">eclipse-to-idea</a></p>
+        <h3 id="本地"><a href="#本地" class="headerlink" title="本地"></a>本地</h3><p>copy 1.txt D:\test\</p>
+<h3 id="网络路径"><a href="#网络路径" class="headerlink" title="网络路径"></a>网络路径</h3><p>copy 1.txt \192.168.1.1\test\</p>
+<p><strong>需要注意的地方</strong></p>
+<ul>
+<li>windows下所有路径中都是反斜杠而不是斜杠</li>
+<li>路径以斜杠开头时为什么要两个反斜杠？<br>因为 \ 在 C/C++/C# 中是转义前导字符，例如 \n 代表换行，如果路径中刚好有类似转义字符开头的，那么就会引起问题，所以路径中的 \ 必须用 \\ 的形式。</li>
+<li>windows下表示参数也是斜杠，跟linux一样，如systeminfo | findstr /B /C:”OS”</li>
+</ul>
+<p><strong>展开</strong></p>
+<blockquote>
+<p>http://<br>http后面也跟了两个斜杠，其实一个斜杠或者没有斜杠也是可以的。</p>
+</blockquote>
 
       
     </div>
@@ -396,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/postc06a3bf0/" rel="next" title="关于#if defined">
-                <i class="fa fa-chevron-left"></i> 关于#if defined
+              <a href="/post/3ee39e03/" rel="next" title="关于windows中添加网络位置与映射网络驱动器的区别">
+                <i class="fa fa-chevron-left"></i> 关于windows中添加网络位置与映射网络驱动器的区别
               </a>
             
           </div>
@@ -406,8 +417,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post5354b010/" rel="prev" title="mx.zugehao.com不能登录的,看这里！！！">
-                mx.zugehao.com不能登录的,看这里！！！ <i class="fa fa-chevron-right"></i>
+              <a href="/post/fac85dbf/" rel="prev" title="关于wps不能使用excel宏">
+                关于wps不能使用excel宏 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -479,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -538,6 +558,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地"><span class="nav-number">1.</span> <span class="nav-text">本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络路径"><span class="nav-number">2.</span> <span class="nav-text">网络路径</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

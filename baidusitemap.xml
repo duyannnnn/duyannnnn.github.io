@@ -4,7 +4,7 @@
 
     
   <url>
-    <loc>http://duyana.top/post63812160/</loc>
+    <loc>http://duyana.top/post/63812160/</loc>
     <lastmod>2018-07-28T18:05:21.744Z</lastmod>
     <data>
         <display>
@@ -22,97 +22,7 @@
 
     
   <url>
-    <loc>http://duyana.top/post59d52da5/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>hexo Next主题 5.1.4版本下配置Gitalk</title>
-        <pubTime>2018-07-27T13:03:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/post3e73ea95/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>第一次搭建hexo+github遇到的坑</title>
-        <pubTime>2018-04-19T03:23:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/post5354b010/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>mx.zugehao.com不能登录的,看这里！！！</title>
-        <pubTime>2018-07-27T03:23:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="practice" url="http://duyana.top/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/post8623d21/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>关于eclipse与myeclipse中的工程如何在IDEA中运行</title>
-        <pubTime>2018-05-18T09:16:40.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="web" url="http://duyana.top/categories/web/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/postb4fc98c5/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>cmd命令行复制操作</title>
-        <pubTime>2018-04-25T09:45:31.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="windows" url="http://duyana.top/categories/windows/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/postbf1c2fd3/</loc>
+    <loc>http://duyana.top/post/bf1c2fd3/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
         <display>
@@ -130,7 +40,97 @@
 
     
   <url>
-    <loc>http://duyana.top/post3ee39e03/</loc>
+    <loc>http://duyana.top/post/3e73ea95/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>第一次搭建hexo+github遇到的坑</title>
+        <pubTime>2018-04-19T03:23:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/5354b010/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>mx.zugehao.com不能登录的,看这里！！！</title>
+        <pubTime>2018-07-27T03:23:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="practice" url="http://duyana.top/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/8623d21/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>关于eclipse与myeclipse中的工程如何在IDEA中运行</title>
+        <pubTime>2018-05-18T09:16:40.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="web" url="http://duyana.top/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/59d52da5/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>hexo Next主题 5.1.4版本下配置Gitalk</title>
+        <pubTime>2018-07-27T13:03:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/b4fc98c5/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>cmd命令行复制操作</title>
+        <pubTime>2018-04-25T09:45:31.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="windows" url="http://duyana.top/categories/windows/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/3ee39e03/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
         <display>
@@ -148,7 +148,7 @@
 
     
   <url>
-    <loc>http://duyana.top/postfac85dbf/</loc>
+    <loc>http://duyana.top/post/fac85dbf/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
         <display>
@@ -166,7 +166,7 @@
 
     
   <url>
-    <loc>http://duyana.top/post645fcee2/</loc>
+    <loc>http://duyana.top/post/645fcee2/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
         <display>
@@ -184,7 +184,7 @@
 
     
   <url>
-    <loc>http://duyana.top/post627d7c1/</loc>
+    <loc>http://duyana.top/post/627d7c1/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
         <display>
@@ -202,7 +202,7 @@
 
     
   <url>
-    <loc>http://duyana.top/postc06a3bf0/</loc>
+    <loc>http://duyana.top/post/c06a3bf0/</loc>
     <lastmod>2018-07-27T15:11:31.591Z</lastmod>
     <data>
         <display>
