@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
+<meta name="description" content="hexo d提交不成功 配置Git环境变量，配置完一定要退出当前shell环境，重新打开。 删除.deploy_git文件夹，重新运行hexo g, hexo d。 在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。 INFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于段地址与偏移地址(8086CPU)">
-<meta property="og:url" content="http://duyana.top/undefined/645fcee2/index.html">
+<meta property="og:title" content="第一次搭建hexo+github遇到的坑">
+<meta property="og:url" content="http://duyana.top/post3e73ea95/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
+<meta property="og:description" content="hexo d提交不成功 配置Git环境变量，配置完一定要退出当前shell环境，重新打开。 删除.deploy_git文件夹，重新运行hexo g, hexo d。 在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。 INFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-07-27T15:11:31.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于段地址与偏移地址(8086CPU)">
-<meta name="twitter:description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
+<meta name="twitter:title" content="第一次搭建hexo+github遇到的坑">
+<meta name="twitter:description" content="hexo d提交不成功 配置Git环境变量，配置完一定要退出当前shell环境，重新打开。 删除.deploy_git文件夹，重新运行hexo g, hexo d。 在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。 INFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://duyana.top/undefined/645fcee2/"/>
+  <link rel="canonical" href="http://duyana.top/post3e73ea95/"/>
 
 
 
 
 
-  <title>关于段地址与偏移地址(8086CPU) | 杜焰</title>
+  <title>第一次搭建hexo+github遇到的坑 | 杜焰</title>
   
 
 
@@ -244,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://duyana.top/undefined/645fcee2/">
+    <link itemprop="mainEntityOfPage" href="http://duyana.top/post3e73ea95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜焰">
@@ -261,7 +261,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">关于段地址与偏移地址(8086CPU)</h2>
+          <h2 class="post-title" itemprop="name headline">第一次搭建hexo+github遇到的坑</h2>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T17:23:58+08:00">
-                2018-04-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T11:23:58+08:00">
+                2018-04-19
               </time>
             
 
@@ -285,7 +285,7 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>235 字</span>
+              <span>171 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
               </span>
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/collection/" itemprop="url" rel="index">
-                    <span itemprop="name">汇编</span>
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
                   </a>
                 </span>
 
@@ -342,7 +342,18 @@
       
 
       
-        <h3 id="为什么要用段地址与偏移地址来决定物理地址"><a href="#为什么要用段地址与偏移地址来决定物理地址" class="headerlink" title="为什么要用段地址与偏移地址来决定物理地址"></a>为什么要用段地址与偏移地址来决定物理地址</h3><p>　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？<br>　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的时候不要把注意力放在段地址上面。而是80 * 10(段地址 * 16)上面，CPU称之为基础地址，8086CPU读取内存中的数据就是利用这种方式寻址的。<br>　　所以内存中其实是没有一个一个段的，就是这843块钱也可以是843张一元大钞一样。</p>
+        <h3 id="hexo-d提交不成功"><a href="#hexo-d提交不成功" class="headerlink" title="hexo d提交不成功"></a>hexo d提交不成功</h3><ul>
+<li>配置Git环境变量，配置完一定要退出当前shell环境，重新打开。</li>
+<li>删除<strong>.deploy_git</strong>文件夹，重新运行hexo g, hexo d。</li>
+<li>在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。<blockquote>
+<p>INFO  Deploying: git<br>INFO  Clearing .deploy_git folder…<br>INFO  Copying files from public folder…<br>INFO  Copying files from extend dirs…</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="执行hexo-d命令时总是要输出github的用户名和密码"><a href="#执行hexo-d命令时总是要输出github的用户名和密码" class="headerlink" title="执行hexo d命令时总是要输出github的用户名和密码"></a>执行hexo d命令时总是要输出github的用户名和密码</h3><ul>
+<li>win7可以这么解决，<a href="https://blog.csdn.net/forevercjl/article/details/39557713" target="_blank" rel="noopener">https://blog.csdn.net/forevercjl/article/details/39557713</a></li>
+<li>修改最外层的_config.yml仓库repo, 去github复制链接，https改为ssh形式的，由于电脑上有私钥，故不再需要输入账号密码。</li>
+</ul>
 
       
     </div>
@@ -396,18 +407,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/undefined/3e73ea95/" rel="next" title="第一次搭建hexo+github遇到的坑">
-                <i class="fa fa-chevron-left"></i> 第一次搭建hexo+github遇到的坑
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/undefined/627d7c1/" rel="prev" title="TCP三次握手四次挥手">
-                TCP三次握手四次挥手 <i class="fa fa-chevron-right"></i>
+              <a href="/post645fcee2/" rel="prev" title="关于段地址与偏移地址(8086CPU)">
+                关于段地址与偏移地址(8086CPU) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用段地址与偏移地址来决定物理地址"><span class="nav-number">1.</span> <span class="nav-text">为什么要用段地址与偏移地址来决定物理地址</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-d提交不成功"><span class="nav-number">1.</span> <span class="nav-text">hexo d提交不成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行hexo-d命令时总是要输出github的用户名和密码"><span class="nav-number">2.</span> <span class="nav-text">执行hexo d命令时总是要输出github的用户名和密码</span></a></li></ol></div>
             
 
           </div>

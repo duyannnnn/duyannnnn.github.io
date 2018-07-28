@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="注意点#if defined 相较于 #ifdef后面确实是可以接多个宏，但是1#if defined A || B 的写法是错误的，正确的写法应该是1#if defined A || defined B">
+<meta name="description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于#if defined">
-<meta property="og:url" content="http://duyana.top/undefined/c06a3bf0/index.html">
+<meta property="og:title" content="关于段地址与偏移地址(8086CPU)">
+<meta property="og:url" content="http://duyana.top/post645fcee2/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="注意点#if defined 相较于 #ifdef后面确实是可以接多个宏，但是1#if defined A || B 的写法是错误的，正确的写法应该是1#if defined A || defined B">
+<meta property="og:description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-27T15:11:31.591Z">
+<meta property="og:updated_time" content="2018-07-27T15:11:31.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于#if defined">
-<meta name="twitter:description" content="注意点#if defined 相较于 #ifdef后面确实是可以接多个宏，但是1#if defined A || B 的写法是错误的，正确的写法应该是1#if defined A || defined B">
+<meta name="twitter:title" content="关于段地址与偏移地址(8086CPU)">
+<meta name="twitter:description" content="为什么要用段地址与偏移地址来决定物理地址　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://duyana.top/undefined/c06a3bf0/"/>
+  <link rel="canonical" href="http://duyana.top/post645fcee2/"/>
 
 
 
 
 
-  <title>关于#if defined | 杜焰</title>
+  <title>关于段地址与偏移地址(8086CPU) | 杜焰</title>
   
 
 
@@ -244,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://duyana.top/undefined/c06a3bf0/">
+    <link itemprop="mainEntityOfPage" href="http://duyana.top/post645fcee2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜焰">
@@ -261,7 +261,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">关于#if defined</h2>
+          <h2 class="post-title" itemprop="name headline">关于段地址与偏移地址(8086CPU)</h2>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T11:16:31+08:00">
-                2018-05-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T17:23:58+08:00">
+                2018-04-20
               </time>
             
 
@@ -285,7 +285,7 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>48 字</span>
+              <span>235 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
               </span>
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index">
-                    <span itemprop="name">c</span>
+                  <a href="/categories/collection/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编</span>
                   </a>
                 </span>
 
@@ -342,8 +342,7 @@
       
 
       
-        <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>#if defined 相较于 #ifdef后面确实是可以接多个宏，但是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#if defined A || B</span><br></pre></td></tr></table></figure></p>
-<p>的写法是错误的，正确的写法应该是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#if defined A || defined B</span><br></pre></td></tr></table></figure></p>
+        <h3 id="为什么要用段地址与偏移地址来决定物理地址"><a href="#为什么要用段地址与偏移地址来决定物理地址" class="headerlink" title="为什么要用段地址与偏移地址来决定物理地址"></a>为什么要用段地址与偏移地址来决定物理地址</h3><p>　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？<br>　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的时候不要把注意力放在段地址上面。而是80 * 10(段地址 * 16)上面，CPU称之为基础地址，8086CPU读取内存中的数据就是利用这种方式寻址的。<br>　　所以内存中其实是没有一个一个段的，就是这843块钱也可以是843张一元大钞一样。</p>
 
       
     </div>
@@ -397,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/undefined/bf1c2fd3/" rel="next" title="excel2007 .xlsm文件中查看宏代码">
-                <i class="fa fa-chevron-left"></i> excel2007 .xlsm文件中查看宏代码
+              <a href="/post3e73ea95/" rel="next" title="第一次搭建hexo+github遇到的坑">
+                <i class="fa fa-chevron-left"></i> 第一次搭建hexo+github遇到的坑
               </a>
             
           </div>
@@ -407,8 +406,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/undefined/8623d21/" rel="prev" title="关于eclipse与myeclipse中的工程如何在IDEA中运行">
-                关于eclipse与myeclipse中的工程如何在IDEA中运行 <i class="fa fa-chevron-right"></i>
+              <a href="/post627d7c1/" rel="prev" title="TCP三次握手四次挥手">
+                TCP三次握手四次挥手 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -558,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">1.</span> <span class="nav-text">注意点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用段地址与偏移地址来决定物理地址"><span class="nav-number">1.</span> <span class="nav-text">为什么要用段地址与偏移地址来决定物理地址</span></a></li></ol></div>
             
 
           </div>
