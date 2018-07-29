@@ -1,8 +1,10 @@
 #robots.txt
 
-User-agent: * Allow: /
+User-agent: * 
+Allow: /
 
 Allow: /archives/
+Allow: /post/
 
 
 Disallow: /vendors/
