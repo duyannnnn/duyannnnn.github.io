@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://duyana.top/post/7440f480/</loc>
-    <lastmod>2018-07-30T16:25:01.803Z</lastmod>
+    <lastmod>2018-07-30T16:26:26.766Z</lastmod>
     <data>
         <display>
         <title>浏览器同源策略</title>
@@ -58,42 +58,6 @@
 
     
   <url>
-    <loc>http://duyana.top/post/3e73ea95/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>第一次搭建hexo+github遇到的坑</title>
-        <pubTime>2018-04-19T03:23:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/post/5354b010/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>mx.zugehao.com不能登录的,看这里！！！</title>
-        <pubTime>2018-07-27T03:23:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="practice" url="http://duyana.top/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://duyana.top/post/8623d21/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
@@ -130,24 +94,6 @@
 
     
   <url>
-    <loc>http://duyana.top/post/627d7c1/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>TCP三次握手四次挥手</title>
-        <pubTime>2018-04-21T12:30:04.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网络" url="http://duyana.top/categories/network/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://duyana.top/post/b4fc98c5/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
@@ -159,6 +105,24 @@
            
              
               <breadCrumb title="windows" url="http://duyana.top/categories/windows/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/5354b010/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>mx.zugehao.com不能登录的,看这里！！！</title>
+        <pubTime>2018-07-27T03:23:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="practice" url="http://duyana.top/categories/practice/"/>
           
         </display>
     </data>
@@ -213,6 +177,42 @@
            
              
               <breadCrumb title="汇编" url="http://duyana.top/categories/collection/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/627d7c1/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>TCP三次握手四次挥手</title>
+        <pubTime>2018-04-21T12:30:04.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网络" url="http://duyana.top/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/3e73ea95/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>第一次搭建hexo+github遇到的坑</title>
+        <pubTime>2018-04-19T03:23:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
           
         </display>
     </data>
