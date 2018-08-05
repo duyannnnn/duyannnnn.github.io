@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2018-07-31T11:40:11.130Z</updated>
+  <updated>2018-08-05T13:52:50.551Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次ssh踩过的坑</title>
+    <link href="http://duyana.top/post/ee137612/"/>
+    <id>http://duyana.top/post/ee137612/</id>
+    <published>2018-08-05T15:21:54.000Z</published>
+    <updated>2018-08-05T13:52:50.551Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;最近买一个树莓派，由于没有HDMI转VGA的线，没有显示屏，只是用ssh操作，开始几天倒没什么，可能是关机总是直接拔电源的缘故，损坏了文件系统，重装系统后就再也连不上ssh了。</p><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>&#160; &#160; &#160;&#160;试了网上的很多方法都没有解决，直到看到一篇文章说<strong>cat /var/log/auth.log</strong>可以查看登录日志。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Aug  5 18:53:59 raspberrypi sshd[2171]: fatal: No supported key exchange algorithms [preauth]</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: fatal: No supported key exchange algorithms [preauth]</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: key_load_public: invalid format</span><br></pre></td></tr></table></figure><p>难道是key出了问题，那就直接重新生成密钥吧。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /etc/ssh/ssh_host*</span><br><span class="line">sudo dpkg-reconfigure openssh-server</span><br></pre></td></tr></table></figure><h2 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h2><ol><li>日志是个好东西。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;最近买一个树莓派，由于没有HDMI转VGA的线，没有显示屏，只是用ssh操作，开始几天倒
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://duyana.top/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>浏览器同源策略</title>
@@ -35,29 +58,6 @@
     </summary>
     
       <category term="web" scheme="http://duyana.top/categories/web/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>记一次ssh踩过的坑</title>
-    <link href="http://duyana.top/post/ee137612/"/>
-    <id>http://duyana.top/post/ee137612/</id>
-    <published>2018-07-29T15:21:54.000Z</published>
-    <updated>2018-08-05T13:49:57.640Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;最近买一个树莓派，由于没有HDMI转VGA的线，没有显示屏，只是用ssh操作，开始几天倒没什么，可能是关机总是直接拔电源的缘故，损坏了文件系统，重装系统后就再也连不上ssh了。</p><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>&#160; &#160; &#160;&#160;试了网上的很多方法都没有解决，直到看到一篇文章说<strong>cat /var/log/auth.log</strong>可以查看登录日志。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Aug  5 18:53:59 raspberrypi sshd[2171]: fatal: No supported key exchange algorithms [preauth]</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: error: Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br><span class="line">Aug  5 18:54:03 raspberrypi sshd[2176]: fatal: No supported key exchange algorithms [preauth]</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: key_load_public: invalid format</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Aug  5 18:54:07 raspberrypi sshd[2184]: error: key_load_public: invalid format</span><br></pre></td></tr></table></figure><p>难道是key出了问题，那就直接重新生成密钥吧。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /etc/ssh/ssh_host*</span><br><span class="line">sudo dpkg-reconfigure openssh-server</span><br></pre></td></tr></table></figure><h2 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h2><ol><li>日志是个好东西。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;最近买一个树莓派，由于没有HDMI转VGA的线，没有显示屏，只是用ssh操作，开始几天倒
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="http://duyana.top/categories/linux/"/>
     
     
   </entry>

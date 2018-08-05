@@ -5,11 +5,11 @@
     
   <url>
     <loc>http://duyana.top/post/ee137612/</loc>
-    <lastmod>2018-08-05T13:49:57.640Z</lastmod>
+    <lastmod>2018-08-05T13:52:50.551Z</lastmod>
     <data>
         <display>
         <title>记一次ssh踩过的坑</title>
-        <pubTime>2018-07-29T15:21:54.000Z</pubTime>
+        <pubTime>2018-08-05T15:21:54.000Z</pubTime>
         
          
            
@@ -76,24 +76,6 @@
 
     
   <url>
-    <loc>http://duyana.top/post/3e73ea95/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>第一次搭建hexo+github遇到的坑</title>
-        <pubTime>2018-04-19T03:23:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://duyana.top/post/b4fc98c5/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
@@ -112,6 +94,24 @@
 
     
   <url>
+    <loc>http://duyana.top/post/3e73ea95/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>第一次搭建hexo+github遇到的坑</title>
+        <pubTime>2018-04-19T03:23:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="hexo" url="http://duyana.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://duyana.top/post/8623d21/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
@@ -123,60 +123,6 @@
            
              
               <breadCrumb title="web" url="http://duyana.top/categories/web/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/post/5354b010/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>mx.zugehao.com不能登录的,看这里！！！</title>
-        <pubTime>2018-07-27T03:23:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="practice" url="http://duyana.top/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/post/645fcee2/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>关于段地址与偏移地址(8086CPU)</title>
-        <pubTime>2018-04-20T09:23:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="汇编" url="http://duyana.top/categories/collection/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://duyana.top/post/fac85dbf/</loc>
-    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
-    <data>
-        <display>
-        <title>关于wps不能使用excel宏</title>
-        <pubTime>2018-05-08T01:02:18.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="乌云" url="http://duyana.top/categories/%E4%B9%8C%E4%BA%91/"/>
           
         </display>
     </data>
@@ -220,6 +166,24 @@
 
     
   <url>
+    <loc>http://duyana.top/post/5354b010/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>mx.zugehao.com不能登录的,看这里！！！</title>
+        <pubTime>2018-07-27T03:23:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="practice" url="http://duyana.top/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://duyana.top/post/3ee39e03/</loc>
     <lastmod>2018-07-27T15:11:31.607Z</lastmod>
     <data>
@@ -231,6 +195,42 @@
            
              
               <breadCrumb title="windows" url="http://duyana.top/categories/windows/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/fac85dbf/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>关于wps不能使用excel宏</title>
+        <pubTime>2018-05-08T01:02:18.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="乌云" url="http://duyana.top/categories/%E4%B9%8C%E4%BA%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://duyana.top/post/645fcee2/</loc>
+    <lastmod>2018-07-27T15:11:31.607Z</lastmod>
+    <data>
+        <display>
+        <title>关于段地址与偏移地址(8086CPU)</title>
+        <pubTime>2018-04-20T09:23:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="汇编" url="http://duyana.top/categories/collection/"/>
           
         </display>
     </data>
