@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2018-08-24T14:45:00.282Z</updated>
+  <updated>2018-10-09T13:35:29.824Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>http协议的一次实践</title>
+    <link href="http://duyana.top/post/6b84bc82/"/>
+    <id>http://duyana.top/post/6b84bc82/</id>
+    <published>2018-09-20T12:23:58.000Z</published>
+    <updated>2018-10-09T13:35:29.824Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;今天在爆破登录的时候，由于有验证码，尝试了burpsuite插件，但是只能拿到第一次的验证码，后面的一直重复，看了burpsuite的API，实在找不到问题在哪，于是就想自己写一个爆破工具，识别验证码的插件用的是cnn，识别率很高，主要是免费，但是在构建http请求头部的时候，却遇到了问题，于是去重温了一下http协议。</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>&#160; &#160; &#160;&#160;使用HttpUrlConnect构建好http请求头部之后，虽然请求成功，也返回了200状态码，但是返回的数据却与预期不一样，说明这次模拟请求数据构建是有误的，用wireshark抓包发现，在网页中请求时抓包是这样的。</p><p><img src="https://note.youdao.com/yws/api/personal/file/56578ECA9E2041B289230E4627CFCDF3?method=download&amp;shareKey=14c37a2a448e3f3a66a1415be8176dcd" alt="image"></p><p>&#160; &#160; &#160;&#160;而模拟请求时这个JSON字段的值不见了，现在就可以确定是请求体的问题，因为之前使用手机抓包时，JSON字符串前面有PostData这个字段，所以构建的请求体就变成了“Postdata:”+”JSONString”，而实际是不需要“Postdata:”的。虽然是一个很简单的问题，但是却被坑了很久。</p><h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><p>&#160; &#160; &#160;&#160;http是无连接无状态的，即不保持连接，也不知道上一次连接是什么时候。数据量大的时候这样会消耗大量的网络资源，所以后来出现了Kepp-Alive来保持连接，Cookie技术来记录状态。</p><h2 id="TCP三次握手四次挥手"><a href="#TCP三次握手四次挥手" class="headerlink" title="TCP三次握手四次挥手"></a>TCP三次握手四次挥手</h2><p>&#160; &#160; &#160;&#160;前面的文章其实已经记录过TCP三次握手四次挥手，但是之前只知道有这个过程，不知道为什么要有这个过程。</p><ol><li>三次握手四次挥手是建立在<strong>信道不稳定</strong>的基础上的，如果能保证信道是稳定的，那么根本就不需要这么麻烦了，</li><li>这种连接方式是为了保证<strong>连接的可靠性</strong>，而不是为了保证数据的一致。</li><li>怎么保证可靠性？超时重传。但是不对“确认(tcp连接时第三次握手)”进行超时重传。</li><li>不对“确认”进行确认，所以连接时只有三次，而不会反复的确认下去。</li><li>那为什么挥手却需要4次呢，因为挥手需要双方都做好准备，而握手则不需要，因为握手时相当于已经是准备状态，一方请求断开连接(已经做好关闭连接的准备)，另一方并不会马上断开，它可能还有数据要发送，所以它只能先给一个答复(收到了对方断开连接的请求)，事情处理完之后，才发出“已经做完准备，可以断开”的请求，这是第三次挥手，那么对方此时已经在准备状态，只需要确认请求(第四次挥手)即可。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;今天在爆破登录的时候，由于有验证码，尝试了burpsuite插件，但是只能拿到第一次的验
+      
+    
+    </summary>
+    
+      <category term="book" scheme="http://duyana.top/categories/book/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>第一次SQL注入总结(使用sqlmap)</title>
