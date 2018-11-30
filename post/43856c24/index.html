@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;今天在爆破登录的时候，由于有验证码，尝试了burpsuite插件，但是只能拿到第一次的验证码，后面的一直重复，看了burpsuite的API，实在找不到问题在哪，于是就想自己写一个爆破工具，识别验证码的插件用的是cnn，识别率很高，主要是免费，但是在构建http请求头部的时候，却遇到了问题，于是去重温了一下http协议。 问题&amp;#160; &amp;">
+<meta name="description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;Apache ActiveMQ弱口令还挺多的,ip:8161,admin,admin,漏洞利用网上文章还挺多的。 &amp;#160; &amp;#160; &amp;#160;&amp;#160;Apache ActiveMQ国家漏洞库 &amp;#160; &amp;#160; &amp;#160;&amp;#160;ActiveMQ漏洞利用方法总结 记录 获取绝对路径漏洞如果是中文字符的话burps">
 <meta property="og:type" content="article">
-<meta property="og:title" content="http协议的一次实践">
-<meta property="og:url" content="http://duyana.top/post/6b84bc82/index.html">
+<meta property="og:title" content="Apache ActiveMQ漏洞利用注意点">
+<meta property="og:url" content="http://duyana.top/post/43856c24/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;今天在爆破登录的时候，由于有验证码，尝试了burpsuite插件，但是只能拿到第一次的验证码，后面的一直重复，看了burpsuite的API，实在找不到问题在哪，于是就想自己写一个爆破工具，识别验证码的插件用的是cnn，识别率很高，主要是免费，但是在构建http请求头部的时候，却遇到了问题，于是去重温了一下http协议。 问题&amp;#160; &amp;">
+<meta property="og:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;Apache ActiveMQ弱口令还挺多的,ip:8161,admin,admin,漏洞利用网上文章还挺多的。 &amp;#160; &amp;#160; &amp;#160;&amp;#160;Apache ActiveMQ国家漏洞库 &amp;#160; &amp;#160; &amp;#160;&amp;#160;ActiveMQ漏洞利用方法总结 记录 获取绝对路径漏洞如果是中文字符的话burps">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/56578ECA9E2041B289230E4627CFCDF3?method=download&shareKey=14c37a2a448e3f3a66a1415be8176dcd">
-<meta property="og:updated_time" content="2018-10-09T13:37:04.261Z">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/EA07173CE5274546BA87F0D33F4CC361?method=download&shareKey=36dac3daea2f7ce0d2f39dfaec5fcaae">
+<meta property="og:updated_time" content="2018-11-30T13:41:45.726Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="http协议的一次实践">
-<meta name="twitter:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;今天在爆破登录的时候，由于有验证码，尝试了burpsuite插件，但是只能拿到第一次的验证码，后面的一直重复，看了burpsuite的API，实在找不到问题在哪，于是就想自己写一个爆破工具，识别验证码的插件用的是cnn，识别率很高，主要是免费，但是在构建http请求头部的时候，却遇到了问题，于是去重温了一下http协议。 问题&amp;#160; &amp;">
-<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/56578ECA9E2041B289230E4627CFCDF3?method=download&shareKey=14c37a2a448e3f3a66a1415be8176dcd">
+<meta name="twitter:title" content="Apache ActiveMQ漏洞利用注意点">
+<meta name="twitter:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;Apache ActiveMQ弱口令还挺多的,ip:8161,admin,admin,漏洞利用网上文章还挺多的。 &amp;#160; &amp;#160; &amp;#160;&amp;#160;Apache ActiveMQ国家漏洞库 &amp;#160; &amp;#160; &amp;#160;&amp;#160;ActiveMQ漏洞利用方法总结 记录 获取绝对路径漏洞如果是中文字符的话burps">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/EA07173CE5274546BA87F0D33F4CC361?method=download&shareKey=36dac3daea2f7ce0d2f39dfaec5fcaae">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://duyana.top/post/6b84bc82/"/>
+  <link rel="canonical" href="http://duyana.top/post/43856c24/"/>
 
 
 
 
 
-  <title>http协议的一次实践 | 杜焰</title>
+  <title>Apache ActiveMQ漏洞利用注意点 | 杜焰</title>
   
 
 
@@ -246,7 +246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://duyana.top/post/6b84bc82/">
+    <link itemprop="mainEntityOfPage" href="http://duyana.top/post/43856c24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜焰">
@@ -263,7 +263,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">http协议的一次实践</h2>
+          <h2 class="post-title" itemprop="name headline">Apache ActiveMQ漏洞利用注意点</h2>
         
 
         <div class="post-meta">
@@ -275,8 +275,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T20:23:58+08:00">
-                2018-09-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T20:23:58+08:00">
+                2018-11-30
               </time>
             
 
@@ -287,9 +287,9 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>723 字</span>
+              <span>119 字</span>
               &nbsp; | &nbsp;
-              <span>2 min</span>
+              <span>1 min</span>
               </span>
             
           </span>
@@ -307,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/book/" itemprop="url" rel="index">
-                    <span itemprop="name">book</span>
+                  <a href="/categories/wooyun/" itemprop="url" rel="index">
+                    <span itemprop="name">wooyun</span>
                   </a>
                 </span>
 
@@ -344,18 +344,16 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;今天在爆破登录的时候，由于有验证码，尝试了burpsuite插件，但是只能拿到第一次的验证码，后面的一直重复，看了burpsuite的API，实在找不到问题在哪，于是就想自己写一个爆破工具，识别验证码的插件用的是cnn，识别率很高，主要是免费，但是在构建http请求头部的时候，却遇到了问题，于是去重温了一下http协议。</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>&#160; &#160; &#160;&#160;使用HttpUrlConnect构建好http请求头部之后，虽然请求成功，也返回了200状态码，但是返回的数据却与预期不一样，说明这次模拟请求数据构建是有误的，用wireshark抓包发现，在网页中请求时抓包是这样的。</p>
-<p><img src="https://note.youdao.com/yws/api/personal/file/56578ECA9E2041B289230E4627CFCDF3?method=download&amp;shareKey=14c37a2a448e3f3a66a1415be8176dcd" alt="image"></p>
-<p>&#160; &#160; &#160;&#160;而模拟请求时这个JSON字段的值不见了，现在就可以确定是请求体的问题，因为之前使用手机抓包时，JSON字符串前面有PostData这个字段，所以构建的请求体就变成了“Postdata:”+”JSONString”，而实际是不需要“Postdata:”的。虽然是一个很简单的问题，但是却被坑了很久。</p>
-<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><p>&#160; &#160; &#160;&#160;http是无连接无状态的，即不保持连接，也不知道上一次连接是什么时候。数据量大的时候这样会消耗大量的网络资源，所以后来出现了Kepp-Alive来保持连接，Cookie技术来记录状态。</p>
-<h2 id="TCP三次握手四次挥手"><a href="#TCP三次握手四次挥手" class="headerlink" title="TCP三次握手四次挥手"></a>TCP三次握手四次挥手</h2><p>&#160; &#160; &#160;&#160;前面的文章其实已经记录过TCP三次握手四次挥手，但是之前只知道有这个过程，不知道为什么要有这个过程。</p>
-<ol>
-<li>三次握手四次挥手是建立在<strong>信道不稳定</strong>的基础上的，如果能保证信道是稳定的，那么根本就不需要这么麻烦了，</li>
-<li>这种连接方式是为了保证<strong>连接的可靠性</strong>，而不是为了保证数据的一致。</li>
-<li>怎么保证可靠性？超时重传。但是不对“确认(tcp连接时第三次握手)”进行超时重传。</li>
-<li>不对“确认”进行确认，所以连接时只有三次，而不会反复的确认下去。</li>
-<li>那为什么挥手却需要4次呢，因为挥手需要双方都做好准备，而握手则不需要，因为握手时相当于已经是准备状态，一方请求断开连接(已经做好关闭连接的准备)，另一方并不会马上断开，它可能还有数据要发送，所以它只能先给一个答复(收到了对方断开连接的请求)，事情处理完之后，才发出“已经做完准备，可以断开”的请求，这是第三次挥手，那么对方此时已经在准备状态，只需要确认请求(第四次挥手)即可。</li>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;Apache ActiveMQ弱口令还挺多的,ip:8161,admin,admin,漏洞利用网上文章还挺多的。</p>
+<p>&#160; &#160; &#160;&#160;<a href="http://www.cnnvd.org.cn/web/vulnerability/queryLds.tag?pageno=1&amp;repairLd=" target="_blank" rel="noopener">Apache ActiveMQ国家漏洞库</a></p>
+<p>&#160; &#160; &#160;&#160;<a href="https://www.freebuf.com/column/161188.html" target="_blank" rel="noopener">ActiveMQ漏洞利用方法总结</a></p>
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><ol>
+<li><p>获取绝对路径漏洞如果是中文字符的话burpsuite编码就有问题了，可以尝试修改编码以及改成中文字体。</p>
+</li>
+<li><p>chrome浏览器中文乱码可以装charset插件。<br><img src="https://note.youdao.com/yws/api/personal/file/EA07173CE5274546BA87F0D33F4CC361?method=download&amp;shareKey=36dac3daea2f7ce0d2f39dfaec5fcaae" alt="image"></p>
+</li>
+<li><p>反序列化漏洞在window环境一直没测试成功。</p>
+</li>
 </ol>
 
       
@@ -410,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/e05553d0/" rel="next" title="第一次SQL注入总结(使用sqlmap)">
-                <i class="fa fa-chevron-left"></i> 第一次SQL注入总结(使用sqlmap)
+              <a href="/post/6b84bc82/" rel="next" title="http协议的一次实践">
+                <i class="fa fa-chevron-left"></i> http协议的一次实践
               </a>
             
           </div>
@@ -419,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/43856c24/" rel="prev" title="Apache ActiveMQ漏洞利用注意点">
-                Apache ActiveMQ漏洞利用注意点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -571,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http"><span class="nav-number">3.</span> <span class="nav-text">http</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP三次握手四次挥手"><span class="nav-number">4.</span> <span class="nav-text">TCP三次握手四次挥手</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记录"><span class="nav-number">2.</span> <span class="nav-text">记录</span></a></li></ol></div>
             
 
           </div>
