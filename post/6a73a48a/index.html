@@ -89,7 +89,7 @@
 <meta property="og:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;从开始接触编程书上就有介绍原码、反码、补码，二进制中减去一个负数的时候，直接运算是会出错的(00001111-10000001=10001110=-14与预期15-(-1)=16有很大偏差)，大家都知道00001111加上10000001这个负数的补码就可以得到正解，但是为什么要加上这个数的补码呢？补码为什么就是按位取反再加一呢？正数的补码为">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/B1C6E24AF4C44C388BC2E4DDD8B486A2?method=download&shareKey=c0488e245ce45d8a0f12ee4b70536194">
-<meta property="og:updated_time" content="2018-08-09T11:23:54.659Z">
+<meta property="og:updated_time" content="2018-12-12T12:11:56.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二进制负数减法运算为什么要按位取反再加一">
 <meta name="twitter:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;从开始接触编程书上就有介绍原码、反码、补码，二进制中减去一个负数的时候，直接运算是会出错的(00001111-10000001=10001110=-14与预期15-(-1)=16有很大偏差)，大家都知道00001111加上10000001这个负数的补码就可以得到正解，但是为什么要加上这个数的补码呢？补码为什么就是按位取反再加一呢？正数的补码为">
@@ -287,7 +287,7 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>590 字</span>
+              <span>470 字</span>
               &nbsp; | &nbsp;
               <span>2 min</span>
               </span>
@@ -358,7 +358,7 @@
 </ol>
 <p>&#160; &#160; &#160;&#160;看完第二个问题可能又会想，二进制数的补码(相反数)为什么这么奇怪呢？10000001(十进制等于-1)与 11111111(十进制等于-127)竟然互为补码(相反数)？其实我们把这些数全部列出来就一目了然了。</p>
 <p><img src="https://note.youdao.com/yws/api/personal/file/B1C6E24AF4C44C388BC2E4DDD8B486A2?method=download&amp;shareKey=c0488e245ce45d8a0f12ee4b70536194" alt="image"></p>
-<p>&#160; &#160; &#160;&#160;上图可以看出一切都是有规律的。用十进制计算，正数-与这个正数垂直对应的负数=0，用二进制计算，正数+与这个正数直线相连的负数=0，那么<strong>这个正数垂直对应的负数</strong>与<strong>这个正数直线相连的负数</strong>互为补码，同样根据第二个问题得出的结论，<strong>这个正数垂直对应的负数</strong>与<strong>这个正数直线相连的负数</strong>互为相反数。那么看图，就可以很清晰的看出来补码为什么就是按位取反再加一了。</p>
+<p>&#160; &#160; &#160;&#160;上图可以看出一切都是有规律的。下面的负数的相反数其实就是一个首尾相连的过程。</p>
 <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>&#160; &#160; &#160;&#160;关键在于理解补码就是相反数这个概念。</p>
 
       
@@ -532,7 +532,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
