@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2019-01-06T09:30:29.633Z</updated>
+  <updated>2019-03-04T15:21:06.848Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>面试问到的一些问题</title>
+    <link href="http://duyana.top/post/c56443ca/"/>
+    <id>http://duyana.top/post/c56443ca/</id>
+    <published>2019-03-04T10:21:54.000Z</published>
+    <updated>2019-03-04T15:21:06.848Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;记录面试时被问到的一些问题,入职后停更。</p><h2 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a>问题汇总</h2><p>岗位：网络安全|linux,c开发(安全方向)|渗透测试</p><ol><li>说一次你最有成就感的漏洞挖掘经历(问得最多)</li><li>给你一个注入点?id=1，怎么做渗透测试?</li><li>给你一个登录框，怎么做渗透测试？(多谈谈信息收集)</li><li>注入(几种类型？有什么不同)，xss(几种类型？有什么不同), csrf等常见漏洞及原理？</li><li>token生成机制？</li><li>日志收集平台，有什么思路收集不同开发语言的错误日志？</li><li>之前的工作与面试的工作有什么共通的地方？</li><li>xxe漏洞</li><li>手写实现字符串拷贝(c语言)。</li><li>知道哪些排序算法？手写一个</li><li>c语言获取文件大小</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>大厂注重基础，小厂注重效率(仅针对我这几次面试)。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;记录面试时被问到的一些问题,入职后停更。&lt;/p&gt;
+&lt;h2 id=&quot;问题汇总&quot;&gt;&lt;a hr
+      
+    
+    </summary>
+    
+      <category term="practice" scheme="http://duyana.top/categories/practice/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>2018年总结</title>
     <link href="http://duyana.top/post/fa88ee57/"/>
     <id>http://duyana.top/post/fa88ee57/</id>
     <published>2018-12-31T15:21:54.000Z</published>
-    <updated>2019-01-06T09:30:29.633Z</updated>
+    <updated>2019-01-06T09:32:14.598Z</updated>
     
     <content type="html"><![CDATA[<h2 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h2><p>&#160; &#160; &#160;&#160;时间总是不让人察觉，一路走来，已经度过那些无忧无虑的时光，但值得庆幸的是，终于明确了之后的方向，有时候看到刚毕业就在安全方向小有成就的大牛也会想，自己这迷茫的四年是不是真的有些遗憾，如果…如果….，想想还是不必羡慕了，那些从小就能坚定自己目标的人，醉心于心中所往，不闻身旁诱惑与繁华，本身就值得拥有。而我，也不算太晚。<br>&#160; &#160; &#160;&#160;17.2月出来实习至今，一直在潜心学习安全，从一开始盲目加入各种QQ群，发现都是灰产，菠菜，但是至少让我知道了一些专业术语，poc,exp,webshell,0day。现在想想还是有些感慨，一个人摸索着前进，连门都要找这么久，到17.4月发现i春秋论坛，一个免费的视频，学会了搭建kali,照着葫芦画瓢，arpspoof,driftnet,ettercap,msf制作木马apk,一步一步熟悉工具，但只知其然，不知其所以然，找网络方面的资料，ip,端口，tcp/ip协议，wireshark抓包分析，总算对网络有了一个雏形的认知，后面工作需要，学习了html,js,css,jqury,知道了一些前端知识，知道了一个网页是怎么出来的，知道了F12，但对于后端还不太熟，于是又去找资料，输入链接，点击搜索后，浏览器，服务器，都做了些什么，知道了有php,jsp,asp,aspx,html这些后缀,后来发现有些链接很奇怪，可以没有这些后缀，学习到了伪静态，到这时候开始学会用一些工具，sqlmap,burpsute,hydra,开始沉迷在角本小子的小小成就感里,庆幸搜索资料时了解到了乌云，一个一个学习着乌云的漏洞和思路，才发现只会用工具是不行的，得去学习工具都做了啥。有时候会为一个问题想很久，像对于cdn存在时网站真实IP这个问题，网上所说，看dns解析记录，用冷门dns,用国外dns,查子域名IP，…..，怎么验证是不是真实IP？网上所说，修改hosts文件，将验证IP对应到域名即可，可实际验证的结果却是修改了好几个不同的IP,都可以正常访问，修改hosts文件,只是为了不让dns去解析，那为什么不直接输入IP访问呢，这时候才知道可以多个域名对应一个IP，才知道反向代理……<br>&#160; &#160; &#160;&#160;不断的学习，去走一遍前人已经铺好的路，到现在，才终于站在了安全的门口，里面是一个崭新的世界，有荆棘，有坎坷，有诱惑，有红，有白，有灰，有黑，此刻我告诉自己，不忘初心。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>0.继续学习，滚去看书。<br>1.技能还是不扎实，还得注重基础。<br>2.概念都了解清楚之后就得学会举一反三了。<br>3.kown it,then hack it,开始学习代码审计。</p>]]></content>
     
