@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2019-03-04T15:21:06.848Z</updated>
+  <updated>2019-03-04T15:23:17.379Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://duyana.top/post/c56443ca/"/>
     <id>http://duyana.top/post/c56443ca/</id>
     <published>2019-03-04T10:21:54.000Z</published>
-    <updated>2019-03-04T15:21:06.848Z</updated>
+    <updated>2019-03-04T15:23:17.379Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;记录面试时被问到的一些问题,入职后停更。</p><h2 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a>问题汇总</h2><p>岗位：网络安全|linux,c开发(安全方向)|渗透测试</p><ol><li>说一次你最有成就感的漏洞挖掘经历(问得最多)</li><li>给你一个注入点?id=1，怎么做渗透测试?</li><li>给你一个登录框，怎么做渗透测试？(多谈谈信息收集)</li><li>注入(几种类型？有什么不同)，xss(几种类型？有什么不同), csrf等常见漏洞及原理？</li><li>token生成机制？</li><li>日志收集平台，有什么思路收集不同开发语言的错误日志？</li><li>之前的工作与面试的工作有什么共通的地方？</li><li>xxe漏洞</li><li>手写实现字符串拷贝(c语言)。</li><li>知道哪些排序算法？手写一个</li><li>c语言获取文件大小</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>大厂注重基础，小厂注重效率(仅针对我这几次面试)。</p>]]></content>
     
