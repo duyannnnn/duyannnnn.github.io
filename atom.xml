@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2019-03-04T15:23:17.379Z</updated>
+  <updated>2019-03-13T15:58:51.061Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图解HTTP协议</title>
+    <link href="http://duyana.top/post/18aee95c/"/>
+    <id>http://duyana.top/post/18aee95c/</id>
+    <published>2019-03-13T15:21:54.000Z</published>
+    <updated>2019-03-13T15:58:51.061Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>0.编码传输<br>1.分包传输<br>2.cookie技术<br>3.持久连接节省通信量</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;记录&quot;&gt;&lt;a href=&quot;#记录&quot; class=&quot;headerlink&quot; title=&quot;记录&quot;&gt;&lt;/a&gt;记录&lt;/h2&gt;&lt;p&gt;0.编码传输&lt;br&gt;1.分包传输&lt;br&gt;2.cookie技术&lt;br&gt;3.持久连接节省通信量&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="book" scheme="http://duyana.top/categories/book/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>面试问到的一些问题</title>
@@ -463,30 +487,6 @@
     </summary>
     
       <category term="汇编" scheme="http://duyana.top/categories/collection/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>第一次搭建hexo+github遇到的坑</title>
-    <link href="http://duyana.top/post/3e73ea95/"/>
-    <id>http://duyana.top/post/3e73ea95/</id>
-    <published>2018-04-19T03:23:58.000Z</published>
-    <updated>2018-07-27T15:11:31.607Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="hexo-d提交不成功"><a href="#hexo-d提交不成功" class="headerlink" title="hexo d提交不成功"></a>hexo d提交不成功</h3><ul><li>配置Git环境变量，配置完一定要退出当前shell环境，重新打开。</li><li>删除<strong>.deploy_git</strong>文件夹，重新运行hexo g, hexo d。</li><li>在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。<blockquote><p>INFO  Deploying: git<br>INFO  Clearing .deploy_git folder…<br>INFO  Copying files from public folder…<br>INFO  Copying files from extend dirs…</p></blockquote></li></ul><h3 id="执行hexo-d命令时总是要输出github的用户名和密码"><a href="#执行hexo-d命令时总是要输出github的用户名和密码" class="headerlink" title="执行hexo d命令时总是要输出github的用户名和密码"></a>执行hexo d命令时总是要输出github的用户名和密码</h3><ul><li>win7可以这么解决，<a href="https://blog.csdn.net/forevercjl/article/details/39557713" target="_blank" rel="noopener">https://blog.csdn.net/forevercjl/article/details/39557713</a></li><li>修改最外层的_config.yml仓库repo, 去github复制链接，https改为ssh形式的，由于电脑上有私钥，故不再需要输入账号密码。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;hexo-d提交不成功&quot;&gt;&lt;a href=&quot;#hexo-d提交不成功&quot; class=&quot;headerlink&quot; title=&quot;hexo d提交不成功&quot;&gt;&lt;/a&gt;hexo d提交不成功&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;配置Git环境变量，配置完一定要退出当前shell环境，
-      
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://duyana.top/categories/hexo/"/>
     
     
   </entry>
