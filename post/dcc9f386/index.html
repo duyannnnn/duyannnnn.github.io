@@ -83,14 +83,14 @@
 
 <meta name="description" content="前言C99标准《ISO/IEC 9899:1999》6.3.1.1中第2段末尾写到：  If an int can represent all values of the original type, the value is converted to an int; otherwise, it is converted to an unsigned int. These are called t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言牛角尖——printf char显示ffffff">
+<meta property="og:title" content="C语言:printf char显示ffffff">
 <meta property="og:url" content="http://duyana.top/post/dcc9f386/index.html">
 <meta property="og:site_name" content="杜焰">
 <meta property="og:description" content="前言C99标准《ISO/IEC 9899:1999》6.3.1.1中第2段末尾写到：  If an int can represent all values of the original type, the value is converted to an int; otherwise, it is converted to an unsigned int. These are called t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T04:36:14.224Z">
+<meta property="og:updated_time" content="2019-03-14T04:43:51.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言牛角尖——printf char显示ffffff">
+<meta name="twitter:title" content="C语言:printf char显示ffffff">
 <meta name="twitter:description" content="前言C99标准《ISO/IEC 9899:1999》6.3.1.1中第2段末尾写到：  If an int can represent all values of the original type, the value is converted to an int; otherwise, it is converted to an unsigned int. These are called t">
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title>C语言牛角尖——printf char显示ffffff | 杜焰</title>
+  <title>C语言:printf char显示ffffff | 杜焰</title>
   
 
 
@@ -261,7 +261,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">C语言牛角尖——printf char显示ffffff</h2>
+          <h2 class="post-title" itemprop="name headline">C语言:printf char显示ffffff</h2>
         
 
         <div class="post-meta">
@@ -344,9 +344,9 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>C99标准《ISO/IEC 9899:1999》6.3.1.1中第2段末尾写到：</p>
 <blockquote>
-<p>If an int can represent all values of the original type, the value is converted to an int; otherwise, it is converted to an unsigned int. These are called the integer promotions. 48) All other types are unchanged by the integer promotions.</p>
+<p>If an int can represent all values of the original type, the value is converted to an int; otherwise, it is converted to an unsigned int. These are called the integer promotions. All other types are unchanged by the integer promotions.</p>
 </blockquote>
-<h3 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h3><p>1.converted(转换,怕翻译得准确)只是针对于显示的时候，不要理解成初始化的时候在内存中converted。<br>如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char a = 0xcf;</span><br><span class="line">printf(&quot;%x\n&quot;, a); //0xffffffcf //64位</span><br></pre></td></tr></table></figure></p>
+<h3 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h3><p>1.converted(转换,怕翻译得不准确)只是针对于显示的时候，不要理解成初始化的时候在内存中converted。<br>如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char a = 0xcf;</span><br><span class="line">printf(&quot;%x\n&quot;, a); //0xffffffcf //64位</span><br></pre></td></tr></table></figure></p>
 <p>等同于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%x\n&quot;, (int)a); //0xffffffcf //64位</span><br></pre></td></tr></table></figure></p>
 <p>2.一个signed有符号的变量，进行位运算之后，就成了unsigned.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">char a = -1; //1000 0001  -&gt; 反码1111 1110 -&gt; 补码1111 1111(内存中的形式)</span><br><span class="line">printf(&quot;%x\n&quot;, a);  //ffffffff</span><br><span class="line">printf(&quot;%d\n&quot;, a);  //-1</span><br><span class="line">printf(&quot;%x\n&quot;, a&amp;0xff);  //ff</span><br><span class="line">printf(&quot;%d\n&quot;, a&amp;0xff);  //255</span><br></pre></td></tr></table></figure></p>
 <p>3.所以，要解决signed char类型出现ffffff的情况，可以使用unsigned char 或者 &amp;0xff.</p>
