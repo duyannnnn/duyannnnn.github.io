@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2019-03-13T15:58:51.061Z</updated>
+  <updated>2019-03-14T04:36:14.224Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C语言牛角尖——printf char显示ffffff</title>
+    <link href="http://duyana.top/post/dcc9f386/"/>
+    <id>http://duyana.top/post/dcc9f386/</id>
+    <published>2020-02-05T15:21:54.000Z</published>
+    <updated>2019-03-14T04:36:14.224Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>C99标准《ISO/IEC 9899:1999》6.3.1.1中第2段末尾写到：</p><blockquote><p>If an int can represent all values of the original type, the value is converted to an int; otherwise, it is converted to an unsigned int. These are called the integer promotions. 48) All other types are unchanged by the integer promotions.</p></blockquote><h3 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h3><p>1.converted(转换,怕翻译得准确)只是针对于显示的时候，不要理解成初始化的时候在内存中converted。<br>如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char a = 0xcf;</span><br><span class="line">printf(&quot;%x\n&quot;, a); //0xffffffcf //64位</span><br></pre></td></tr></table></figure></p><p>等同于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%x\n&quot;, (int)a); //0xffffffcf //64位</span><br></pre></td></tr></table></figure></p><p>2.一个signed有符号的变量，进行位运算之后，就成了unsigned.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">char a = -1; //1000 0001  -&gt; 反码1111 1110 -&gt; 补码1111 1111(内存中的形式)</span><br><span class="line">printf(&quot;%x\n&quot;, a);  //ffffffff</span><br><span class="line">printf(&quot;%d\n&quot;, a);  //-1</span><br><span class="line">printf(&quot;%x\n&quot;, a&amp;0xff);  //ff</span><br><span class="line">printf(&quot;%d\n&quot;, a&amp;0xff);  //255</span><br></pre></td></tr></table></figure></p><p>3.所以，要解决signed char类型出现ffffff的情况，可以使用unsigned char 或者 &amp;0xff.</p><h3 id="疑惑点"><a href="#疑惑点" class="headerlink" title="疑惑点"></a>疑惑点</h3><p>计算机对于<br>1111 1111<br>这段内存，它是怎么区分首位的1是不是代表符号？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;C99标准《ISO/IEC 9899:1999》6.3.1.1中第2段末尾写到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If an int
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://duyana.top/categories/linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>图解HTTP协议</title>
     <link href="http://duyana.top/post/18aee95c/"/>
     <id>http://duyana.top/post/18aee95c/</id>
     <published>2019-03-13T15:21:54.000Z</published>
-    <updated>2019-03-13T15:58:51.061Z</updated>
+    <updated>2019-03-13T15:59:44.942Z</updated>
     
     <content type="html"><![CDATA[<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>0.编码传输<br>1.分包传输<br>2.cookie技术<br>3.持久连接节省通信量</p>]]></content>
     
@@ -464,29 +489,6 @@
     </summary>
     
       <category term="网络" scheme="http://duyana.top/categories/network/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>关于段地址与偏移地址(8086CPU)</title>
-    <link href="http://duyana.top/post/645fcee2/"/>
-    <id>http://duyana.top/post/645fcee2/</id>
-    <published>2018-04-20T09:23:58.000Z</published>
-    <updated>2018-07-27T15:11:31.607Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="为什么要用段地址与偏移地址来决定物理地址"><a href="#为什么要用段地址与偏移地址来决定物理地址" class="headerlink" title="为什么要用段地址与偏移地址来决定物理地址"></a>为什么要用段地址与偏移地址来决定物理地址</h3><p>　　物理地址 = 段地址 * 16 + 偏移地址，这样处理的意义是什么？<br>　　我的理解，有人要还你843块钱，那么你希望收到一堆零钱还是希望收到8张一百43块零钱呢，你如果不觉得麻烦可以会选择前者，但是CPU觉得麻烦，843 = 80 * 10 + 43，十进制所以是10不是16，所以段的长度就是一百块钱，偏移地址就是43块零钱，段地址为80，所以一开始理解的时候不要把注意力放在段地址上面。而是80 * 10(段地址 * 16)上面，CPU称之为基础地址，8086CPU读取内存中的数据就是利用这种方式寻址的。<br>　　所以内存中其实是没有一个一个段的，就是这843块钱也可以是843张一元大钞一样。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;为什么要用段地址与偏移地址来决定物理地址&quot;&gt;&lt;a href=&quot;#为什么要用段地址与偏移地址来决定物理地址&quot; class=&quot;headerlink&quot; title=&quot;为什么要用段地址与偏移地址来决定物理地址&quot;&gt;&lt;/a&gt;为什么要用段地址与偏移地址来决定物理地址&lt;/h3&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="汇编" scheme="http://duyana.top/categories/collection/"/>
     
     
   </entry>
