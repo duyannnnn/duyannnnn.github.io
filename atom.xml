@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2019-03-14T10:49:31.817Z</updated>
+  <updated>2019-03-15T15:03:56.315Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DNS域传送</title>
+    <link href="http://duyana.top/post/13aa4438/"/>
+    <id>http://duyana.top/post/13aa4438/</id>
+    <published>2019-03-15T15:21:54.000Z</published>
+    <updated>2019-03-15T15:03:56.315Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;了解的第一个漏洞就是DNS域传送。把它搞清楚吧。</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>大厂的内网一般都有自己的DNS服务务，而DNS服务器一般都会存在主服务器，跟备份服务器，备份服务器会从主服务器拷贝DNS解析数据库，当主服务器配置不当时(如下)，就会被利用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">zone &quot;test.org&quot; &#123;</span><br><span class="line"></span><br><span class="line">type master;</span><br><span class="line"></span><br><span class="line">file &quot;/bind/etc/wooyun.org.conf&quot;;</span><br><span class="line"></span><br><span class="line">allow-transfer &#123;any;&#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><h2 id="利用方式"><a href="#利用方式" class="headerlink" title="利用方式"></a>利用方式</h2><ol><li><p>nslookup</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nslooup</span><br><span class="line">server dns.test.com</span><br><span class="line">ls test.com</span><br></pre></td></tr></table></figure></li><li><p>nmap</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --script dns-zone-transfer --script-args dns-zone-transfer.domain=test.com -p 53 -Pn dns.test.com</span><br></pre></td></tr></table></figure></li><li><p>dig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig axfr @dns.test.com thnu.edu.cn</span><br></pre></td></tr></table></figure></li></ol><h2 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h2><ol><li>如何找到DNS服务器的NS，dig test.com NS 命令。</li><li>不要把dns.test.com理解成域名，我之前一直纳闷，dns的域名又是由谁去解析的呢?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A记录 IP地址记录,记录一个域名对应的IP地址</span><br><span class="line">AAAA记录  IPv6地址记录，记录一个域名对应的IPv6地址</span><br><span class="line">CNAME记录   别名记录，记录一个主机的别名</span><br><span class="line">MX记录    电子邮件交换记录，记录一个邮件域名对应的IP地址，比如my[at]lijiejie.com</span><br><span class="line">后面的部分lijiejie.com，邮件服务器对应的IP地址</span><br><span class="line">NS记录      域名服务器记录 ,记录该域名由哪台域名服务器解析</span><br><span class="line">PTR记录     反向记录，也即从IP地址到域名的一条记录</span><br><span class="line">TXT记录     记录域名的相关文本信息</span><br><span class="line">SOA记录   start of anthorization 开始授权，是一种比较难以理解的记录值，一般二级域名才会有</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;了解的第一个漏洞就是DNS域传送。把它搞清楚吧。&lt;/p&gt;
+&lt;h2 id=&quot;原理&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+      <category term="网络" scheme="http://duyana.top/categories/network/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>C语言:printf char显示ffffff</title>
@@ -466,29 +490,6 @@
     </summary>
     
       <category term="windows" scheme="http://duyana.top/categories/windows/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>TCP三次握手四次挥手</title>
-    <link href="http://duyana.top/post/627d7c1/"/>
-    <id>http://duyana.top/post/627d7c1/</id>
-    <published>2018-04-21T12:30:04.000Z</published>
-    <updated>2018-07-27T15:11:31.607Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>　　客户端：你好！我想跟你建立连接（SYN=1），我随机生成一个号码（Seq=x）给你。<br>　　服务端：你好！我确认（ACK=1）了，你真的要建立连接（SYN=1）吗？我把你给的随机号加1还给你（ack=x+1）,我也给你生成一随机号（Seq=y）。<br>　　客户端：你好！看到你确认了，我得核对（ack是否等于我第一次给你的随机号x加1，ACK是否等于1）一下，核对没问题，那我也确认（ACK=1）了，也把你给的随机号加1（ack=y+1）一起发给你。</p><blockquote><p>最后服务端核对（ack是否等于y加1，ACK是否等于1）,核对成功那么就可以建立连接了。</p></blockquote><h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>　　客户端：你好！再见（FIN）了，给你说完这句话我就不会回你了，不过你还有什么想对我说的吗？我还是可以听到的，我随机生成一个号码（Seq=x）给你。<br>　　服务端：你好！我确认（与握手的确认一样）看到你说的话了。我组织一下语言看看我还有什么想说的。我随机生成一个号码（Seq=y）给你。<br>　　．．．．．（服务端给客户端的信息，如果有的话）<br>　　服务端：你好！我说完了，再见（FIN）！我随机生成一个号码（Seq=z）给你。<br>　　客户端：你好！我也确认（与握手的确认一样）看到你说的话了。</p><blockquote><p>最后服务端核对（ack是否等于z加1，ACK是否等于1）,核对成功那么就可以建立连接了。</p></blockquote><p><strong>备注</strong>：每次都会生成随机号（Seq）与将接收到的随机号加一赋值给ack(ack=Seq+1)，以上为了不冗余有省略。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;三次握手&quot;&gt;&lt;a href=&quot;#三次握手&quot; class=&quot;headerlink&quot; title=&quot;三次握手&quot;&gt;&lt;/a&gt;三次握手&lt;/h3&gt;&lt;p&gt;　　客户端：你好！我想跟你建立连接（SYN=1），我随机生成一个号码（Seq=x）给你。&lt;br&gt;　　服务端：你好！我确认（A
-      
-    
-    </summary>
-    
-      <category term="网络" scheme="http://duyana.top/categories/network/"/>
     
     
   </entry>
