@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2019-03-15T15:03:56.315Z</updated>
+  <updated>2019-03-16T15:38:42.644Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>oauth协议配置利用点</title>
+    <link href="http://duyana.top/post/5a5221c1/"/>
+    <id>http://duyana.top/post/5a5221c1/</id>
+    <published>2019-03-16T15:21:54.000Z</published>
+    <updated>2019-03-16T15:38:42.644Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。</p><h2 id="利用点"><a href="#利用点" class="headerlink" title="利用点"></a>利用点</h2><ol><li>oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。</li><li>oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_url.</li><li>没有使用state参数，可以会造成CSRF.</li><li><p>服务端拿到code, 带着code请求第三方API返回token, 用token + appid就可以从授权方获取用户数据。所以code被劫持替换之后，获取的是其它第三方帐户信息，验证不当可能会造成任意用户绑定或登录。qq的api是用一个openid验证，一个openid对应一个用户。</p><blockquote><p>yzmcms的代码片断</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if ($token) &#123;                                                                                                                                  </span><br><span class="line">    $url=&quot;https://graph.qq.com/oauth2.0/me?access_token=$token&quot;;                                                                               </span><br><span class="line">    $content=file_get_contents($url);                                                                                                          </span><br><span class="line">    $content=str_replace(&apos;callback( &apos;,&apos;&apos;,$content);                                                                                            </span><br><span class="line">    $content=str_replace(&apos; );&apos;,&apos;&apos;,$content);                                                                                                   </span><br><span class="line">    $returns = json_decode($content);                                                                                                          </span><br><span class="line">    $openid = $returns-&gt;openid;                                                                                                                </span><br><span class="line">    $this-&gt;openid = $openid;                                                                                                                                                                                                                              </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></blockquote></li><li><p>所以应用方与第三方都有可以产生配置不当的漏洞。</p></li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&#160; &#160; &#160;&#160;严格遵守oauth协议规范。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。&lt;/p
+      
+    
+    </summary>
+    
+      <category term="practice" scheme="http://duyana.top/categories/practice/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>DNS域传送</title>
     <link href="http://duyana.top/post/13aa4438/"/>
     <id>http://duyana.top/post/13aa4438/</id>
     <published>2019-03-15T15:21:54.000Z</published>
-    <updated>2019-03-15T15:03:56.315Z</updated>
+    <updated>2019-03-15T15:04:56.157Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;了解的第一个漏洞就是DNS域传送。把它搞清楚吧。</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>大厂的内网一般都有自己的DNS服务务，而DNS服务器一般都会存在主服务器，跟备份服务器，备份服务器会从主服务器拷贝DNS解析数据库，当主服务器配置不当时(如下)，就会被利用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">zone &quot;test.org&quot; &#123;</span><br><span class="line"></span><br><span class="line">type master;</span><br><span class="line"></span><br><span class="line">file &quot;/bind/etc/wooyun.org.conf&quot;;</span><br><span class="line"></span><br><span class="line">allow-transfer &#123;any;&#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><h2 id="利用方式"><a href="#利用方式" class="headerlink" title="利用方式"></a>利用方式</h2><ol><li><p>nslookup</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nslooup</span><br><span class="line">server dns.test.com</span><br><span class="line">ls test.com</span><br></pre></td></tr></table></figure></li><li><p>nmap</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --script dns-zone-transfer --script-args dns-zone-transfer.domain=test.com -p 53 -Pn dns.test.com</span><br></pre></td></tr></table></figure></li><li><p>dig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig axfr @dns.test.com thnu.edu.cn</span><br></pre></td></tr></table></figure></li></ol><h2 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h2><ol><li>如何找到DNS服务器的NS，dig test.com NS 命令。</li><li>不要把dns.test.com理解成域名，我之前一直纳闷，dns的域名又是由谁去解析的呢?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A记录 IP地址记录,记录一个域名对应的IP地址</span><br><span class="line">AAAA记录  IPv6地址记录，记录一个域名对应的IPv6地址</span><br><span class="line">CNAME记录   别名记录，记录一个主机的别名</span><br><span class="line">MX记录    电子邮件交换记录，记录一个邮件域名对应的IP地址，比如my[at]lijiejie.com</span><br><span class="line">后面的部分lijiejie.com，邮件服务器对应的IP地址</span><br><span class="line">NS记录      域名服务器记录 ,记录该域名由哪台域名服务器解析</span><br><span class="line">PTR记录     反向记录，也即从IP地址到域名的一条记录</span><br><span class="line">TXT记录     记录域名的相关文本信息</span><br><span class="line">SOA记录   start of anthorization 开始授权，是一种比较难以理解的记录值，一般二级域名才会有</span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
@@ -459,32 +482,6 @@
       
         &lt;h3 id=&quot;本地&quot;&gt;&lt;a href=&quot;#本地&quot; class=&quot;headerlink&quot; title=&quot;本地&quot;&gt;&lt;/a&gt;本地&lt;/h3&gt;&lt;p&gt;copy 1.txt D:\test\&lt;/p&gt;
 &lt;h3 id=&quot;网络路径&quot;&gt;&lt;a href=&quot;#网络路径&quot; class=&quot;headerlin
-      
-    
-    </summary>
-    
-      <category term="windows" scheme="http://duyana.top/categories/windows/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>关于windows中添加网络位置与映射网络驱动器的区别</title>
-    <link href="http://duyana.top/post/3ee39e03/"/>
-    <id>http://duyana.top/post/3ee39e03/</id>
-    <published>2018-04-23T08:26:19.000Z</published>
-    <updated>2018-07-27T15:11:31.607Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="网络位置"><a href="#网络位置" class="headerlink" title="网络位置"></a>网络位置</h3><ul><li>无盘符</li><li>只是一个标记，功能不多，例如不能被设备上其它工程访问到</li><li>占的通信流量少，如果只是简单的文件传输，可以用这个</li></ul><h3 id="网络驱动器"><a href="#网络驱动器" class="headerlink" title="网络驱动器"></a>网络驱动器</h3><ul><li>有盘符</li><li>相当于本地的磁盘</li><li>占的通信流量多</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;网络位置&quot;&gt;&lt;a href=&quot;#网络位置&quot; class=&quot;headerlink&quot; title=&quot;网络位置&quot;&gt;&lt;/a&gt;网络位置&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;无盘符&lt;/li&gt;
-&lt;li&gt;只是一个标记，功能不多，例如不能被设备上其它工程访问到&lt;/li&gt;
-&lt;li&gt;占的通信流量
       
     
     </summary>

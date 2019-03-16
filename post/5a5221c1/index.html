@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="hexo d提交不成功 配置Git环境变量，配置完一定要退出当前shell环境，重新打开。 删除.deploy_git文件夹，重新运行hexo g, hexo d。 在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。 INFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying">
+<meta name="description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。 利用点 oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。 oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_ur">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一次搭建hexo+github遇到的坑">
-<meta property="og:url" content="http://duyana.top/post/3e73ea95/index.html">
+<meta property="og:title" content="oauth协议配置利用点">
+<meta property="og:url" content="http://duyana.top/post/5a5221c1/index.html">
 <meta property="og:site_name" content="杜焰">
-<meta property="og:description" content="hexo d提交不成功 配置Git环境变量，配置完一定要退出当前shell环境，重新打开。 删除.deploy_git文件夹，重新运行hexo g, hexo d。 在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。 INFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying">
+<meta property="og:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。 利用点 oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。 oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_ur">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-27T15:11:31.607Z">
+<meta property="og:updated_time" content="2019-03-16T15:38:42.644Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一次搭建hexo+github遇到的坑">
-<meta name="twitter:description" content="hexo d提交不成功 配置Git环境变量，配置完一定要退出当前shell环境，重新打开。 删除.deploy_git文件夹，重新运行hexo g, hexo d。 在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。 INFO  Deploying: gitINFO  Clearing .deploy_git folder…INFO  Copying">
+<meta name="twitter:title" content="oauth协议配置利用点">
+<meta name="twitter:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。 利用点 oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。 oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_ur">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://duyana.top/post/3e73ea95/"/>
+  <link rel="canonical" href="http://duyana.top/post/5a5221c1/"/>
 
 
 
 
 
-  <title>第一次搭建hexo+github遇到的坑 | 杜焰</title>
+  <title>oauth协议配置利用点 | 杜焰</title>
   
 
 
@@ -244,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://duyana.top/post/3e73ea95/">
+    <link itemprop="mainEntityOfPage" href="http://duyana.top/post/5a5221c1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜焰">
@@ -261,7 +261,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">第一次搭建hexo+github遇到的坑</h2>
+          <h2 class="post-title" itemprop="name headline">oauth协议配置利用点</h2>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T11:23:58+08:00">
-                2018-04-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T23:21:54+08:00">
+                2019-03-16
               </time>
             
 
@@ -285,7 +285,7 @@
 			
               <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>171 字</span>
+              <span>291 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
               </span>
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/practice/" itemprop="url" rel="index">
+                    <span itemprop="name">practice</span>
                   </a>
                 </span>
 
@@ -342,18 +342,21 @@
       
 
       
-        <h3 id="hexo-d提交不成功"><a href="#hexo-d提交不成功" class="headerlink" title="hexo d提交不成功"></a>hexo d提交不成功</h3><ul>
-<li>配置Git环境变量，配置完一定要退出当前shell环境，重新打开。</li>
-<li>删除<strong>.deploy_git</strong>文件夹，重新运行hexo g, hexo d。</li>
-<li>在git bash中执行hexo d命令，才能上传成功，这里原因不明，以下是在cmd中执行的结果。<blockquote>
-<p>INFO  Deploying: git<br>INFO  Clearing .deploy_git folder…<br>INFO  Copying files from public folder…<br>INFO  Copying files from extend dirs…</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。</p>
+<h2 id="利用点"><a href="#利用点" class="headerlink" title="利用点"></a>利用点</h2><ol>
+<li>oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。</li>
+<li>oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_url.</li>
+<li>没有使用state参数，可以会造成CSRF.</li>
+<li><p>服务端拿到code, 带着code请求第三方API返回token, 用token + appid就可以从授权方获取用户数据。所以code被劫持替换之后，获取的是其它第三方帐户信息，验证不当可能会造成任意用户绑定或登录。qq的api是用一个openid验证，一个openid对应一个用户。</p>
+<blockquote>
+<p>yzmcms的代码片断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if ($token) &#123;                                                                                                                                  </span><br><span class="line">    $url=&quot;https://graph.qq.com/oauth2.0/me?access_token=$token&quot;;                                                                               </span><br><span class="line">    $content=file_get_contents($url);                                                                                                          </span><br><span class="line">    $content=str_replace(&apos;callback( &apos;,&apos;&apos;,$content);                                                                                            </span><br><span class="line">    $content=str_replace(&apos; );&apos;,&apos;&apos;,$content);                                                                                                   </span><br><span class="line">    $returns = json_decode($content);                                                                                                          </span><br><span class="line">    $openid = $returns-&gt;openid;                                                                                                                </span><br><span class="line">    $this-&gt;openid = $openid;                                                                                                                                                                                                                              </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
-</ul>
-<h3 id="执行hexo-d命令时总是要输出github的用户名和密码"><a href="#执行hexo-d命令时总是要输出github的用户名和密码" class="headerlink" title="执行hexo d命令时总是要输出github的用户名和密码"></a>执行hexo d命令时总是要输出github的用户名和密码</h3><ul>
-<li>win7可以这么解决，<a href="https://blog.csdn.net/forevercjl/article/details/39557713" target="_blank" rel="noopener">https://blog.csdn.net/forevercjl/article/details/39557713</a></li>
-<li>修改最外层的_config.yml仓库repo, 去github复制链接，https改为ssh形式的，由于电脑上有私钥，故不再需要输入账号密码。</li>
-</ul>
+<li><p>所以应用方与第三方都有可以产生配置不当的漏洞。</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&#160; &#160; &#160;&#160;严格遵守oauth协议规范。</p>
 
       
     </div>
@@ -407,15 +410,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/post/13aa4438/" rel="next" title="DNS域传送">
+                <i class="fa fa-chevron-left"></i> DNS域传送
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/645fcee2/" rel="prev" title="关于段地址与偏移地址(8086CPU)">
-                关于段地址与偏移地址(8086CPU) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-d提交不成功"><span class="nav-number">1.</span> <span class="nav-text">hexo d提交不成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行hexo-d命令时总是要输出github的用户名和密码"><span class="nav-number">2.</span> <span class="nav-text">执行hexo d命令时总是要输出github的用户名和密码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用点"><span class="nav-number">2.</span> <span class="nav-text">利用点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
