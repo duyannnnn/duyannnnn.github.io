@@ -83,14 +83,14 @@
 
 <meta name="description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。 利用点 oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。 oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_ur">
 <meta property="og:type" content="article">
-<meta property="og:title" content="oauth协议配置利用点">
+<meta property="og:title" content="oauth协议利用点">
 <meta property="og:url" content="http://duyana.top/post/5a5221c1/index.html">
 <meta property="og:site_name" content="杜焰">
 <meta property="og:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。 利用点 oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。 oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_ur">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-16T15:38:42.644Z">
+<meta property="og:updated_time" content="2019-03-16T15:49:17.117Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="oauth协议配置利用点">
+<meta name="twitter:title" content="oauth协议利用点">
 <meta name="twitter:description" content="前言&amp;#160; &amp;#160; &amp;#160;&amp;#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。 利用点 oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。 oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_ur">
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title>oauth协议配置利用点 | 杜焰</title>
+  <title>oauth协议利用点 | 杜焰</title>
   
 
 
@@ -261,7 +261,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">oauth协议配置利用点</h2>
+          <h2 class="post-title" itemprop="name headline">oauth协议利用点</h2>
         
 
         <div class="post-meta">
@@ -342,7 +342,7 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;看了国外大神的一处反射xss+两处csrf组合利用，觉得有必要看看oauth协议。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;看了国外大神的<a href="https://whitton.io/articles/uber-turning-self-xss-into-good-xss/" target="_blank" rel="noopener">一处反射xss+两处csrf组合利用</a>，觉得有必要看看oauth协议。</p>
 <h2 id="利用点"><a href="#利用点" class="headerlink" title="利用点"></a>利用点</h2><ol>
 <li>oauth1协议没有对回调参数oauth_callback做限制，导致可以回调到任意网站。那么回调到自己搭建的网站，就可以获得token。</li>
 <li>oauth2 redirect_url也有可以校验不严回调到任意网站。有些网站后台直接固定redirect_url.</li>
@@ -353,7 +353,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if ($token) &#123;                                                                                                                                  </span><br><span class="line">    $url=&quot;https://graph.qq.com/oauth2.0/me?access_token=$token&quot;;                                                                               </span><br><span class="line">    $content=file_get_contents($url);                                                                                                          </span><br><span class="line">    $content=str_replace(&apos;callback( &apos;,&apos;&apos;,$content);                                                                                            </span><br><span class="line">    $content=str_replace(&apos; );&apos;,&apos;&apos;,$content);                                                                                                   </span><br><span class="line">    $returns = json_decode($content);                                                                                                          </span><br><span class="line">    $openid = $returns-&gt;openid;                                                                                                                </span><br><span class="line">    $this-&gt;openid = $openid;                                                                                                                                                                                                                              </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
-<li><p>所以应用方与第三方都有可以产生配置不当的漏洞。</p>
+<li><p>所以应用方与第三方都有可能产生配置不当的漏洞。</p>
 </li>
 </ol>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&#160; &#160; &#160;&#160;严格遵守oauth协议规范。</p>
