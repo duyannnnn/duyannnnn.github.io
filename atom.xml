@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2019-03-17T07:45:05.651Z</updated>
+  <updated>2019-03-17T09:48:00.617Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>端口转发与端口映射</title>
+    <link href="http://duyana.top/post/c9d3a0f1/"/>
+    <id>http://duyana.top/post/c9d3a0f1/</id>
+    <published>2019-03-17T15:22:54.000Z</published>
+    <updated>2019-03-17T09:48:00.617Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;看过几次端口转发与端口映射的区别了，但是每次都是过几天就忘了，自己来简短的总结一下。</p><h2 id="端口转发与端口映射区别"><a href="#端口转发与端口映射区别" class="headerlink" title="端口转发与端口映射区别"></a>端口转发与端口映射区别</h2><p>端口转发：转发程序搭建在中间服务器上，你可以通过中间服务器去访问任何你想访问的资源(只要中间服务器能访问到)，就像科学上网用的代理，渗透测试中也可以用来更方便的探测内网(拿下一台内网主机时)。<br>端口映射：是否映射的决定权在自己主机，映射到中间服务器，任务人都可以通过中间服务器来访问到你。类似Teamviewer软件。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本质上都是端口之间的建立关联。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;看过几次端口转发与端口映射的区别了，但是每次都是过几天就忘了，自己来简短的总结一下。&lt;/
+      
+    
+    </summary>
+    
+      <category term="网络" scheme="http://duyana.top/categories/network/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>linux中的标准输入输出</title>
     <link href="http://duyana.top/post/d6052c51/"/>
     <id>http://duyana.top/post/d6052c51/</id>
     <published>2019-03-17T15:21:54.000Z</published>
-    <updated>2019-03-17T07:45:05.651Z</updated>
+    <updated>2019-03-17T07:45:34.309Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;linux中一切即文件，如用cat test.txt命令在终端显示test.txt文件的内容，如果存在test.txt文件，test.txt就是标准输入，显示在终端上的内容就是标准输出，若不存在test.txt,显示在终端上的内容就是标准错误输出。</p><h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><blockquote><p>command &gt; output.txt  表示将标准输出重定向到output.txt文件中<br>command 2&gt; output.txt 表示将标准错误输出重定向到output.txt文件中<br>command &amp;&gt; output.txt 表示将标准输出与标准错误输出都重定向到output.txt文件中<br>command &gt; output.txt 2&gt;&amp;1  同上</p></blockquote>]]></content>
     
@@ -462,30 +485,6 @@
     </summary>
     
       <category term="windows" scheme="http://duyana.top/categories/windows/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>关于wps不能使用excel宏</title>
-    <link href="http://duyana.top/post/fac85dbf/"/>
-    <id>http://duyana.top/post/fac85dbf/</id>
-    <published>2018-05-08T01:02:18.000Z</published>
-    <updated>2018-11-30T13:47:19.192Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Excel宏"><a href="#Excel宏" class="headerlink" title="Excel宏"></a>Excel宏</h1><p>wps要使用宏需要安装vba6.mis<br>宏可以执行vb代码</p><h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>利用DNS服务器获取IP地址，IP地址可以转换成四个字节得到数据。以此传输数据绕过防火墙。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Excel宏&quot;&gt;&lt;a href=&quot;#Excel宏&quot; class=&quot;headerlink&quot; title=&quot;Excel宏&quot;&gt;&lt;/a&gt;Excel宏&lt;/h1&gt;&lt;p&gt;wps要使用宏需要安装vba6.mis&lt;br&gt;宏可以执行vb代码&lt;/p&gt;
-&lt;h1 id=&quot;tips&quot;&gt;&lt;a 
-      
-    
-    </summary>
-    
-      <category term="wooyun" scheme="http://duyana.top/categories/wooyun/"/>
     
     
   </entry>
